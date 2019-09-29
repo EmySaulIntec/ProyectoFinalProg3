@@ -9,6 +9,7 @@ namespace DatabaseProject.Models
         public bool IsCasher { get; set; }
         public bool IsEnabled { get; set; } = true;
         public string Email { get; set; }
+        public bool IsAdmin { get; set; }
 
         public override string ToString()
         {

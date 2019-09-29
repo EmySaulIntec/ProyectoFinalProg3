@@ -1,5 +1,6 @@
 ﻿using DatabaseProject.Models;
 using DatabaseProject.Repositories;
+using ProyectoFinalProg3;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -36,7 +37,6 @@ namespace CashBox
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
             if (string.IsNullOrEmpty(txtUserName.Text))
             {
                 MessageBox.Show("Nombre de usuario invalido");
@@ -54,7 +54,8 @@ namespace CashBox
                 UserName = txtUserName.Text,
                 Password = txtPassword.Text,
                 Email = txtEmail.Text,
-                IsCasher = chkIsCasher.Checked
+                IsCasher = chkIsCasher.Checked,
+                IsAdmin = chkIsAdmin.Checked
             });
 
             SelectedUser = null;
@@ -84,9 +85,14 @@ namespace CashBox
                 SelectedUser.Password = txtPassword.Text;
                 SelectedUser.Email = txtEmail.Text;
                 SelectedUser.IsCasher = chkIsCasher.Checked;
-
+                SelectedUser.IsAdmin = chkIsAdmin.Checked;
+                
                 _userRepository.Update(SelectedUser);
+                
                 Init();
+
+                if (Settings.LoggedUser.Id == SelectedUser.Id)
+                    Settings.LoggedUser = SelectedUser;
 
                 MessageBox.Show("Usuario modificado");
             }
@@ -107,6 +113,7 @@ namespace CashBox
                 txtPassword.Text = this.SelectedUser.Password;
                 txtEmail.Text = this.SelectedUser.Email;
                 chkIsCasher.Checked = this.SelectedUser.IsCasher;
+                chkIsAdmin.Checked = this.SelectedUser.IsAdmin;
 
                 lblUser.Text = SelectedUser.UserName;
                 lblStatus.Text = SelectedUser.IsEnabled ? "Si" : "No";
@@ -137,7 +144,7 @@ namespace CashBox
         {
             if (SelectedUser != null)
             {
-               
+
                 SelectedUser.IsEnabled = state;
                 _userRepository.Update(SelectedUser);
                 Init();
@@ -150,11 +157,27 @@ namespace CashBox
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var isLoggedUser = SelectedUser.Id == Settings.LoggedUser.Id;
+            if (isLoggedUser && (MessageBox.Show("La cuenta será desconectada, asegurese de poder ingresear nuevamente. " +
+                "Desea continuar y desactivar el usuario?", "Desactivar Usuario", MessageBoxButtons.YesNo) == DialogResult.No))
+            {
+                return;
+            }
+
             ChangeStateToUser(false);
+
+            if (isLoggedUser)
+            {
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.Show();
+                this.Close();
+             
+                MessageBox.Show("Usuario Desactivado");
+            }
 
         }
 
-      
+
         private void Init()
         {
             listUsers.Items.Clear();
@@ -163,6 +186,7 @@ namespace CashBox
             txtEmail.Clear();
 
             chkIsCasher.Checked = false;
+            chkIsAdmin.Checked = false;
             lblStatus.Text = string.Empty;
             lblUser.Text = string.Empty;
 
@@ -173,6 +197,13 @@ namespace CashBox
 
             var users = _userRepository.GetAll().ToArray();
             listUsers.Items.AddRange(users);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            FrmHome frmHome = new FrmHome();
+            frmHome.Show();
+            this.Close();
         }
     }
 }

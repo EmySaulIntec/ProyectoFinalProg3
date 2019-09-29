@@ -1,15 +1,13 @@
-﻿namespace DatabaseProject.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using DatabaseProject.Models;
+using System.Data.Entity.Migrations;
 
+namespace DatabaseProject.Migrations
+{
     internal sealed class Configuration : DbMigrationsConfiguration<Contexts.CashDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(DatabaseProject.Contexts.CashDbContext context)
@@ -18,6 +16,18 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+
+            var userAdmin = new User()
+            {
+                IsCasher = false,
+                IsEnabled = true,
+                UserName = "Admin",
+                Password = "123",
+                IsAdmin = true,
+                Id = 1
+            };
+
+            context.Users.AddOrUpdate(userAdmin);
         }
     }
 }

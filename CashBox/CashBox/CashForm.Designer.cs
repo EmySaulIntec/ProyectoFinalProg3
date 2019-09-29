@@ -1,6 +1,6 @@
 ﻿namespace CashBox
 {
-    partial class CashForm
+    partial class FrmCash
     {
         /// <summary>
         /// Required designer variable.

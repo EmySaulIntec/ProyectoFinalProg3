@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalProg3
 {
-    partial class Retiro
+    partial class FrmmRetirement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Retiro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmmRetirement));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRetirar = new System.Windows.Forms.Button();
             this.lblNoCuenta = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnCancelar.Location = new System.Drawing.Point(869, 491);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 38);
             this.btnCancelar.TabIndex = 32;
@@ -59,7 +59,7 @@
             this.btnRetirar.BackColor = System.Drawing.Color.Transparent;
             this.btnRetirar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnRetirar.Location = new System.Drawing.Point(684, 491);
-            this.btnRetirar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRetirar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRetirar.Name = "btnRetirar";
             this.btnRetirar.Size = new System.Drawing.Size(171, 41);
             this.btnRetirar.TabIndex = 31;
@@ -82,7 +82,7 @@
             // txtNoCuenta
             // 
             this.txtNoCuenta.Location = new System.Drawing.Point(524, 353);
-            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoCuenta.Name = "txtNoCuenta";
             this.txtNoCuenta.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuenta.TabIndex = 25;
@@ -90,7 +90,7 @@
             // txtCedulaoPasaporte
             // 
             this.txtCedulaoPasaporte.Location = new System.Drawing.Point(524, 286);
-            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
             this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
             this.txtCedulaoPasaporte.TabIndex = 24;
@@ -146,12 +146,13 @@
             // txtMontoaRetirar
             // 
             this.txtMontoaRetirar.Location = new System.Drawing.Point(524, 415);
-            this.txtMontoaRetirar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontoaRetirar.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoaRetirar.Name = "txtMontoaRetirar";
             this.txtMontoaRetirar.Size = new System.Drawing.Size(213, 22);
             this.txtMontoaRetirar.TabIndex = 35;
+            this.txtMontoaRetirar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoaRetirar_KeyPress);
             // 
-            // Retiro
+            // FrmmRetirement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,6 +160,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ControlBox = false;
             this.Controls.Add(this.txtMontoaRetirar);
             this.Controls.Add(this.lblMontoaRetirar);
             this.Controls.Add(this.btnCancelar);
@@ -169,10 +171,10 @@
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblRetiro);
             this.Controls.Add(this.lblBankintoch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Retiro";
+            this.Name = "FrmmRetirement";
             this.Text = "Retiro";
             this.ResumeLayout(false);
             this.PerformLayout();

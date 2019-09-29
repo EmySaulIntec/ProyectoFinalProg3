@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalProg3
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.lblUser = new System.Windows.Forms.Label();
             this.lblpassword = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -43,9 +43,10 @@
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
             this.lblUser.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUser.Location = new System.Drawing.Point(331, 119);
+            this.lblUser.Location = new System.Drawing.Point(441, 146);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(155, 32);
+            this.lblUser.Size = new System.Drawing.Size(194, 40);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "UserName";
             // 
@@ -55,33 +56,39 @@
             this.lblpassword.BackColor = System.Drawing.Color.Transparent;
             this.lblpassword.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpassword.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblpassword.Location = new System.Drawing.Point(331, 219);
+            this.lblpassword.Location = new System.Drawing.Point(441, 270);
+            this.lblpassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblpassword.Name = "lblpassword";
-            this.lblpassword.Size = new System.Drawing.Size(155, 32);
+            this.lblpassword.Size = new System.Drawing.Size(194, 40);
             this.lblpassword.TabIndex = 1;
             this.lblpassword.Text = "Password";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(331, 169);
+            this.txtUsername.Location = new System.Drawing.Point(441, 208);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(157, 20);
+            this.txtUsername.Size = new System.Drawing.Size(208, 22);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(331, 287);
+            this.txtPassword.Location = new System.Drawing.Point(441, 352);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(157, 20);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(208, 22);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Transparent;
             this.btnLogin.Font = new System.Drawing.Font("Stencil", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(351, 344);
+            this.btnLogin.Location = new System.Drawing.Point(468, 423);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(115, 39);
+            this.btnLogin.Size = new System.Drawing.Size(153, 48);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "LogIn";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -93,27 +100,29 @@
             this.lblBakintoch.BackColor = System.Drawing.Color.Transparent;
             this.lblBakintoch.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBakintoch.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.lblBakintoch.Location = new System.Drawing.Point(251, 22);
+            this.lblBakintoch.Location = new System.Drawing.Point(335, 27);
+            this.lblBakintoch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBakintoch.Name = "lblBakintoch";
-            this.lblBakintoch.Size = new System.Drawing.Size(328, 57);
+            this.lblBakintoch.Size = new System.Drawing.Size(409, 71);
             this.lblBakintoch.TabIndex = 5;
             this.lblBakintoch.Text = "BANKINTOCH";
             // 
-            // Login
+            // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblBakintoch);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblpassword);
             this.Controls.Add(this.lblUser);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Login";
+            this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BANKINTOCH LOGIN";
             this.Load += new System.EventHandler(this.Form1_Load);

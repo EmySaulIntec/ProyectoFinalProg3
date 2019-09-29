@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalProg3
 {
-    public partial class ValidarCliente : Form
+    public partial class FrmValidateClient : Form
     {
-        public ValidarCliente()
+        public FrmValidateClient()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace ProyectoFinalProg3
                 if (txtNoCuenta.Text == "123456789")
                 {
                     MessageBox.Show("El Usuario es Rubert, Portador de la cedula " + txtCedulaoPasaporte.Text + " y de numero de cuenta " + txtNoCuenta.Text + " es valido!");
-                    Inicio abrir = new Inicio();
+                    FrmHome abrir = new FrmHome();
                     abrir.Show();
                     this.Hide();
                 }
@@ -47,7 +47,7 @@ namespace ProyectoFinalProg3
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            Inicio abrir = new Inicio();
+            FrmHome abrir = new FrmHome();
             abrir.Show();
             this.Hide();
         }

@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using CashBox;
+using DatabaseProject.Models;
+using DatabaseProject.Repositories;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinalProg3
 {
-    public partial class Login : Form
+    public partial class FrmLogin : Form
     {
-        public Login()
+        private UnitOfWork unitOfWork;
+        private BaseRepository<User> _userRepository;
+        public FrmLogin()
         {
             InitializeComponent();
+
+            unitOfWork = new UnitOfWork();
+            _userRepository = unitOfWork.Repository<User>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,22 +26,28 @@ namespace ProyectoFinalProg3
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "rubert")
+            var loggedUser = _userRepository.GetAll().FirstOrDefault(u => u.UserName == txtUsername.Text
+            && u.Password == txtPassword.Text && u.IsEnabled);
+
+            if (loggedUser == null)
             {
-                if (txtPassword.Text == "0522")
-                {
-                    Inicio abrir = new Inicio();
-                    abrir.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Contraseña Incorrecta");
-                }
+                MessageBox.Show(@"Usuario y/o contraseña invalidos.");
+                return;
             }
-            else
+
+            Settings.LoggedUser = loggedUser;
+
+            FrmHome abrir = new FrmHome();
+            abrir.Show();
+            this.Hide();
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Usuario Incorrecto");
+                btnLogin.PerformClick();
             }
         }
     }

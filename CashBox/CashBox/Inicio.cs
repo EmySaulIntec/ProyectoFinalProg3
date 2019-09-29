@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CashBox;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,35 +11,71 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalProg3
 {
-    public partial class Inicio : Form
+    public partial class FrmHome : Form
     {
-        public Inicio()
+        public FrmHome()
         {
             InitializeComponent();
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            if (!Settings.LoggedUser.IsAdmin)
+            {
+                configuracionToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
         }
 
         private void BtnValidarCliente_Click(object sender, EventArgs e)
         {
-            ValidarCliente abrir = new ValidarCliente();
+            if (!Settings.CanDoTransactions())
+            {
+                MessageBox.Show("No se permiten transacciones caja cerrada");
+                return;
+            }
+
+            FrmValidateClient abrir = new FrmValidateClient();
             abrir.Show();
             this.Hide();
         }
 
         private void BtnDeposito_Click(object sender, EventArgs e)
         {
-            Deposito abrir = new Deposito();
+            
+            if (!Settings.LoggedUser.IsCasher)
+            {
+                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.");
+                return;
+            }
+
+            if (!Settings.CanDoTransactions())
+            {
+                MessageBox.Show("No se permiten transacciones caja cerrada");
+                return;
+            }
+
+
+            FrmDeposit abrir = new FrmDeposit();
             abrir.Show();
             this.Hide();
         }
 
         private void BtnRetiro_Click(object sender, EventArgs e)
         {
-            Retiro abrir = new Retiro();
+            if (!Settings.LoggedUser.IsCasher)
+            {
+                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.");
+                return;
+            }
+            
+            if (!Settings.CanDoTransactions())
+            {
+                MessageBox.Show("No se permiten transacciones caja cerrada");
+                return;
+            }
+
+            FrmmRetirement abrir = new FrmmRetirement();
             abrir.Show();
             this.Hide();
         }
@@ -46,11 +83,33 @@ namespace ProyectoFinalProg3
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
 
-            Login abrir = new Login();
+            FrmLogin abrir = new FrmLogin();
             abrir.Show();
             this.Hide();
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+            FrmConfiguration configuration = new FrmConfiguration();
+            configuration.Show();
+            this.Hide();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUser frmUser = new FrmUser();
+            frmUser.Show();
+            this.Hide();
+        }
+
+        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+         
+                
+            var frmConfiguration = new FrmConfiguration();
+            frmConfiguration.Show();
+            this.Hide();
+        }
     }
 }

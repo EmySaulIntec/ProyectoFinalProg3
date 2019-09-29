@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DatabaseProject.Models
 {
 
-    public class BaseEntity
+    public class BaseEntity 
     {
         public long Id { get; set; }
         public DateTime CreationTime { get; private set; } = DateTime.Now;

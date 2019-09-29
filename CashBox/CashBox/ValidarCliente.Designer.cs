@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalProg3
 {
-    partial class ValidarCliente
+    partial class FrmValidateClient
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ValidarCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmValidateClient));
             this.lblBankintoch = new System.Windows.Forms.Label();
             this.lblCedulaoPasaporte = new System.Windows.Forms.Label();
             this.txtCedulaoPasaporte = new System.Windows.Forms.TextBox();
@@ -67,7 +67,7 @@
             // txtCedulaoPasaporte
             // 
             this.txtCedulaoPasaporte.Location = new System.Drawing.Point(457, 329);
-            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4);
             this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
             this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
             this.txtCedulaoPasaporte.TabIndex = 3;
@@ -75,7 +75,7 @@
             // txtNoCuenta
             // 
             this.txtNoCuenta.Location = new System.Drawing.Point(457, 418);
-            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoCuenta.Name = "txtNoCuenta";
             this.txtNoCuenta.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuenta.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.btnValidar.BackColor = System.Drawing.Color.Transparent;
             this.btnValidar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnValidar.Location = new System.Drawing.Point(729, 498);
-            this.btnValidar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(4);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(143, 41);
             this.btnValidar.TabIndex = 6;
@@ -110,7 +110,7 @@
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnCancelar.Location = new System.Drawing.Point(887, 498);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 38);
             this.btnCancelar.TabIndex = 7;
@@ -138,6 +138,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ControlBox = false;
             this.Controls.Add(this.lblValidarCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnValidar);
@@ -146,7 +147,7 @@
             this.Controls.Add(this.txtCedulaoPasaporte);
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblBankintoch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ValidarCliente";

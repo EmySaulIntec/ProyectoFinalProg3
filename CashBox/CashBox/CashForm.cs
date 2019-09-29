@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CashBox
 {
-    public partial class CashForm : Form
+    public partial class FrmCash : Form
     {
-        public CashForm()
+        public FrmCash()
         {
             InitializeComponent();
         }

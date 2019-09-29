@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalProg3
 {
-    partial class Deposito
+    partial class FrmDeposit
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deposito));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDeposit));
             this.lblDeposito = new System.Windows.Forms.Label();
             this.lblBankintoch = new System.Windows.Forms.Label();
             this.lblNoCuenta = new System.Windows.Forms.Label();
             this.txtNoCuenta = new System.Windows.Forms.TextBox();
-            this.txtCedulaoPasaporte = new System.Windows.Forms.TextBox();
+            this.txtIdentification = new System.Windows.Forms.TextBox();
             this.lblCedulaoPasaporte = new System.Windows.Forms.Label();
             this.lblMontoaDepositar = new System.Windows.Forms.Label();
             this.txtMontoaDepositar = new System.Windows.Forms.TextBox();
@@ -41,6 +41,10 @@
             this.btnDepositar = new System.Windows.Forms.Button();
             this.txtNoCuentaDestino = new System.Windows.Forms.TextBox();
             this.lblNoCuentaDestino = new System.Windows.Forms.Label();
+            this.radioIdentification = new System.Windows.Forms.RadioButton();
+            this.radioPassport = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeposito
@@ -82,18 +86,18 @@
             // txtNoCuenta
             // 
             this.txtNoCuenta.Location = new System.Drawing.Point(519, 282);
-            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoCuenta.Name = "txtNoCuenta";
             this.txtNoCuenta.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuenta.TabIndex = 13;
             // 
-            // txtCedulaoPasaporte
+            // txtIdentification
             // 
-            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(519, 217);
-            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
-            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
-            this.txtCedulaoPasaporte.TabIndex = 12;
+            this.txtIdentification.Location = new System.Drawing.Point(519, 217);
+            this.txtIdentification.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdentification.Name = "txtIdentification";
+            this.txtIdentification.Size = new System.Drawing.Size(124, 22);
+            this.txtIdentification.TabIndex = 12;
             // 
             // lblCedulaoPasaporte
             // 
@@ -103,9 +107,9 @@
             this.lblCedulaoPasaporte.Location = new System.Drawing.Point(279, 218);
             this.lblCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedulaoPasaporte.Name = "lblCedulaoPasaporte";
-            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(219, 24);
+            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(165, 24);
             this.lblCedulaoPasaporte.TabIndex = 11;
-            this.lblCedulaoPasaporte.Text = "Cedula o Pasaporte";
+            this.lblCedulaoPasaporte.Text = "Identificacion";
             // 
             // lblMontoaDepositar
             // 
@@ -122,17 +126,18 @@
             // txtMontoaDepositar
             // 
             this.txtMontoaDepositar.Location = new System.Drawing.Point(519, 410);
-            this.txtMontoaDepositar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMontoaDepositar.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoaDepositar.Name = "txtMontoaDepositar";
             this.txtMontoaDepositar.Size = new System.Drawing.Size(213, 22);
             this.txtMontoaDepositar.TabIndex = 17;
+            this.txtMontoaDepositar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoaDepositar_KeyPress);
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnCancelar.Location = new System.Drawing.Point(887, 501);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(164, 38);
             this.btnCancelar.TabIndex = 20;
@@ -145,7 +150,7 @@
             this.btnDepositar.BackColor = System.Drawing.Color.Transparent;
             this.btnDepositar.Font = new System.Drawing.Font("Stencil", 15F);
             this.btnDepositar.Location = new System.Drawing.Point(701, 501);
-            this.btnDepositar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepositar.Name = "btnDepositar";
             this.btnDepositar.Size = new System.Drawing.Size(171, 41);
             this.btnDepositar.TabIndex = 19;
@@ -156,7 +161,7 @@
             // txtNoCuentaDestino
             // 
             this.txtNoCuentaDestino.Location = new System.Drawing.Point(519, 341);
-            this.txtNoCuentaDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNoCuentaDestino.Margin = new System.Windows.Forms.Padding(4);
             this.txtNoCuentaDestino.Name = "txtNoCuentaDestino";
             this.txtNoCuentaDestino.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuentaDestino.TabIndex = 15;
@@ -173,7 +178,44 @@
             this.lblNoCuentaDestino.TabIndex = 16;
             this.lblNoCuentaDestino.Text = "No. Cuenta Destino";
             // 
-            // Deposito
+            // radioIdentification
+            // 
+            this.radioIdentification.AutoSize = true;
+            this.radioIdentification.BackColor = System.Drawing.Color.Transparent;
+            this.radioIdentification.Checked = true;
+            this.radioIdentification.Location = new System.Drawing.Point(18, 38);
+            this.radioIdentification.Name = "radioIdentification";
+            this.radioIdentification.Size = new System.Drawing.Size(85, 21);
+            this.radioIdentification.TabIndex = 22;
+            this.radioIdentification.TabStop = true;
+            this.radioIdentification.Text = "Cedula";
+            this.radioIdentification.UseVisualStyleBackColor = false;
+            // 
+            // radioPassport
+            // 
+            this.radioPassport.AutoSize = true;
+            this.radioPassport.BackColor = System.Drawing.Color.Transparent;
+            this.radioPassport.Location = new System.Drawing.Point(116, 37);
+            this.radioPassport.Name = "radioPassport";
+            this.radioPassport.Size = new System.Drawing.Size(117, 21);
+            this.radioPassport.TabIndex = 23;
+            this.radioPassport.Text = "Pasaporte";
+            this.radioPassport.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.radioIdentification);
+            this.groupBox1.Controls.Add(this.radioPassport);
+            this.groupBox1.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(676, 189);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(236, 69);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de Identificacion";
+            // 
+            // FrmDeposit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,6 +223,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.lblMontoaDepositar);
@@ -189,15 +233,17 @@
             this.Controls.Add(this.txtNoCuentaDestino);
             this.Controls.Add(this.lblNoCuenta);
             this.Controls.Add(this.txtNoCuenta);
-            this.Controls.Add(this.txtCedulaoPasaporte);
+            this.Controls.Add(this.txtIdentification);
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblDeposito);
             this.Controls.Add(this.lblBankintoch);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Deposito";
+            this.Name = "FrmDeposit";
             this.Text = "Deposito";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +255,7 @@
         private System.Windows.Forms.Label lblBankintoch;
         private System.Windows.Forms.Label lblNoCuenta;
         private System.Windows.Forms.TextBox txtNoCuenta;
-        private System.Windows.Forms.TextBox txtCedulaoPasaporte;
+        private System.Windows.Forms.TextBox txtIdentification;
         private System.Windows.Forms.Label lblCedulaoPasaporte;
         private System.Windows.Forms.Label lblMontoaDepositar;
         private System.Windows.Forms.TextBox txtMontoaDepositar;
@@ -217,5 +263,8 @@
         private System.Windows.Forms.Button btnDepositar;
         private System.Windows.Forms.TextBox txtNoCuentaDestino;
         private System.Windows.Forms.Label lblNoCuentaDestino;
+        private System.Windows.Forms.RadioButton radioIdentification;
+        private System.Windows.Forms.RadioButton radioPassport;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
