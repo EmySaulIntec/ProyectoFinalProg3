@@ -37,6 +37,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transaccionesFallidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,11 +110,12 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuariosToolStripMenuItem,
-            this.configuracionToolStripMenuItem});
+            this.configuracionToolStripMenuItem,
+            this.transaccionesFallidasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 30);
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +123,7 @@
             // 
             this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(101, 26);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -129,9 +131,17 @@
             // 
             this.configuracionToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(151, 24);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+            // 
+            // transaccionesFallidasToolStripMenuItem
+            // 
+            this.transaccionesFallidasToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
+            this.transaccionesFallidasToolStripMenuItem.Name = "transaccionesFallidasToolStripMenuItem";
+            this.transaccionesFallidasToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.transaccionesFallidasToolStripMenuItem.Text = "Transacciones Fallidas";
+            this.transaccionesFallidasToolStripMenuItem.Click += new System.EventHandler(this.transaccionesFallidasToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
@@ -172,5 +182,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transaccionesFallidasToolStripMenuItem;
     }
 }

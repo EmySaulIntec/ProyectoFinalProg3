@@ -24,6 +24,7 @@ namespace ProyectoFinalProg3
             {
                 configuracionToolStripMenuItem.Visible = false;
                 usuariosToolStripMenuItem.Visible = false;
+                transaccionesFallidasToolStripMenuItem.Visible = false;
             }
         }
 
@@ -104,11 +105,15 @@ namespace ProyectoFinalProg3
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-         
-                
             var frmConfiguration = new FrmConfiguration();
             frmConfiguration.Show();
+            this.Hide();
+        }
+
+        private void transaccionesFallidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frmFailedTransaction = new FrmFailedTransactions();
+            frmFailedTransaction.Show();
             this.Hide();
         }
     }

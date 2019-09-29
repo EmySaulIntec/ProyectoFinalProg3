@@ -68,6 +68,12 @@
     <Compile Include="FrmConfiguration.Designer.cs">
       <DependentUpon>FrmConfiguration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFailedTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFailedTransactions.Designer.cs">
+      <DependentUpon>FrmFailedTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,10 @@
     <Compile Include="Retiro.Designer.cs">
       <DependentUpon>Retiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\CashService.cs" />
+    <Compile Include="Services\ICashService.cs" />
+    <Compile Include="Services\IIntegrationLayer.cs" />
+    <Compile Include="Services\IntegrationLayer.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="ValidarCliente.cs">
       <SubType>Form</SubType>
@@ -106,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConfiguration.resx">
       <DependentUpon>FrmConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFailedTransactions.resx">
+      <DependentUpon>FrmFailedTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>

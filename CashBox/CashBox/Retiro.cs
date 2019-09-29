@@ -1,4 +1,5 @@
 ﻿using CashBox;
+using CashBox.Services;
 using DatabaseProject.Models;
 using DatabaseProject.Repositories;
 using System;
@@ -10,11 +11,17 @@ namespace ProyectoFinalProg3
     {
         private UnitOfWork unitOfWork;
         private BaseRepository<Transaction> _transactionRepository;
+
+        private readonly ICashService _cashService;
+
+
         public FrmmRetirement()
         {
             InitializeComponent();
             unitOfWork = new UnitOfWork();
             _transactionRepository = unitOfWork.Repository<Transaction>();
+
+            _cashService = new CashService();
         }
 
         private void BtnRetirar_Click(object sender, EventArgs e)
@@ -25,45 +32,26 @@ namespace ProyectoFinalProg3
                 return;
             }
 
-            if (txtIdentification.Text == "402-1277899-3")
+            double amount = Convert.ToDouble(txtMontoaRetirar.Text);
+
+            var transaction = new Transaction()
             {
-                if (txtNoCuenta.Text == "123456789")
-                {
-                    double amount = Convert.ToDouble(txtMontoaRetirar.Text);
+                CasherId = Settings.LoggedUser.Id,
+                OriginAccount = txtNoCuenta.Text,
+                Identification = txtIdentification.Text,
+                IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport,
+                Amount = amount,
+                TransactionType = TransactionTypeEnum.Retirement
+            };
 
-                    if (!Settings.SubstractToCash(amount))
-                    {
-                        MessageBox.Show("No se puede hacer la transacción caja vacía.");
-                        return;
-                    }
+            _cashService.Retirement( transaction);
 
-                    _transactionRepository.Insert(new Transaction()
-                    {
-                        CasherId = Settings.LoggedUser.Id,
-                        OriginAccount = txtNoCuenta.Text,
-                        Identification = txtIdentification.Text,
-                        IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport,
-                        Amount = amount,
-                        TransactionType = TransactionTypeEnum.Retirement
-                    });
-
-
-                    MessageBox.Show("El Usuario es Rubert, Portador de la cedula [" + txtIdentification.Text + "] y de numero de cuenta [" + txtNoCuenta.Text + "] realizo un retiro de [" + txtMontoaRetirar.Text + " pesos] de la cuenta [" + txtNoCuenta.Text + "]");
-                    FrmHome abrir = new FrmHome();
-                    abrir.Show();
-                    this.Hide();
-                }
-                else
-                {
-
-                    MessageBox.Show("El numero de cuenta es incorrecto");
-                }
-            }
-            else
-            {
-                MessageBox.Show("El numero de cedula es incorrecto");
-            }
+            FrmHome home = new FrmHome();
+            home.Show();
+            this.Hide();
         }
+
+
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {

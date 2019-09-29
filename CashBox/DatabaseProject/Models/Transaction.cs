@@ -11,14 +11,28 @@ namespace DatabaseProject.Models
 
         public string DestinyAccount { get; set; }
         public long CasherId { get; set; }
-     
+
         public string Identification { get; set; }
-        public IdentificationTypeEnum? IdentificationType { get; set; }
+        public IdentificationTypeEnum IdentificationType { get; set; }
 
         [ForeignKey(nameof(CasherId))]
         public virtual User Casher { get; set; }
+        public TransactionStatusEnum Status { get; set; }
+
+        public override string ToString()
+        {
+            if (this.TransactionType == TransactionTypeEnum.Deposit)
+                return $"({this.Id}) - Deposito: desde {this.OriginAccount} hasta {this.DestinyAccount} - {CreationTime.ToShortDateString()}";
+            else
+                return $"({this.Id}) - Retiro: de la cuenta {this.OriginAccount} - {CreationTime.ToShortDateString()}";
+        }
     }
 
+    public enum TransactionStatusEnum : int
+    {
+        Completed = 1,
+        Incompleted = 2
+    }
     public enum TransactionTypeEnum : int
     {
         Deposit = 1,

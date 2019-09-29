@@ -67,9 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\CashDbContext.cs" />
-    <Compile Include="Migrations\201909291659356_initial.cs" />
-    <Compile Include="Migrations\201909291659356_initial.designer.cs">
-      <DependentUpon>201909291659356_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201909291907264_added v.cs" />
+    <Compile Include="Migrations\201909291907264_added v.designer.cs">
+      <DependentUpon>201909291907264_added v.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -100,8 +100,8 @@
     <Folder Include="Db\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909291659356_initial.resx">
-      <DependentUpon>201909291659356_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909291907264_added v.resx">
+      <DependentUpon>201909291907264_added v.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

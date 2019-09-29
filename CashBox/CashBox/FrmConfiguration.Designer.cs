@@ -422,7 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 567);
+            this.ClientSize = new System.Drawing.Size(482, 414);
             this.ControlBox = false;
             this.Controls.Add(this.btnCloseCash);
             this.Controls.Add(this.label11);
