@@ -32,7 +32,7 @@ namespace ProyectoFinalProg3
                 return;
             }
 
-            double amount = Convert.ToDouble(txtMontoaRetirar.Text);
+            decimal amount = Convert.ToDecimal(txtMontoaRetirar.Text);
 
             var transaction = new Transaction()
             {
@@ -44,7 +44,7 @@ namespace ProyectoFinalProg3
                 TransactionType = TransactionTypeEnum.Retirement
             };
 
-            _cashService.Retirement( transaction);
+            _cashService.Retirement(transaction);
 
             FrmHome home = new FrmHome();
             home.Show();

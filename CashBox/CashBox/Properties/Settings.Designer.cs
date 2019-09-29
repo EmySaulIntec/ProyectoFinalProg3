@@ -74,9 +74,9 @@ namespace CashBox.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double Amount {
+        public decimal Amount {
             get {
-                return ((double)(this["Amount"]));
+                return ((decimal)(this["Amount"]));
             }
             set {
                 this["Amount"] = value;

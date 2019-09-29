@@ -124,6 +124,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.radioIdentification);
             this.groupBox1.Controls.Add(this.radioPassport);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.groupBox1.Location = new System.Drawing.Point(341, 229);
             this.groupBox1.Name = "groupBox1";

@@ -15,7 +15,7 @@ namespace CashBox
     public class CashBox
     {
         public bool CashIsOpen { get; set; }
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
     }
 
     public static class Settings
@@ -57,12 +57,12 @@ namespace CashBox
             return (initTime <= now && endTime >= now) && Properties.Settings.Default.CashIsOpen;
         }
 
-        public static void AddToCash(double amount)
+        public static void AddToCash(decimal amount)
         {
             Properties.Settings.Default.Amount += amount;
         }
 
-        public static bool SubstractToCash(double amount)
+        public static bool SubstractToCash(decimal amount)
         {
             if (Properties.Settings.Default.Amount - amount < 0)
                 return false;

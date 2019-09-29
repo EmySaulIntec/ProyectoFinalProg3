@@ -32,7 +32,7 @@ namespace ProyectoFinalProg3
                 return;
             }
 
-            double amount = Convert.ToDouble(txtMontoaDepositar.Text);
+            decimal amount = Convert.ToDecimal(txtMontoaDepositar.Text);
 
             var identificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport;
 

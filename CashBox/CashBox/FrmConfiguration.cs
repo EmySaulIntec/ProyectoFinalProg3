@@ -136,7 +136,7 @@ namespace CashBox
                 return;
             }
 
-            Properties.Settings.Default.Amount = Convert.ToDouble(txtCash.Text);
+            Properties.Settings.Default.Amount = Convert.ToDecimal(txtCash.Text);
 
             var currentDate = DateTime.Now.Date;
 

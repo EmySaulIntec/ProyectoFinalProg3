@@ -42,7 +42,7 @@ namespace CashBox.Services
         /// <param name="identificationType">IdentificationTypeEnum : Cedula = 1,  Passport = 2
         /// </param>
         /// <returns>Devuelve true si la transaccion (Deposito) fue efectuada</returns>
-        bool Deposit(string originAccount, string destinyAccount, string identification, IdentificationTypeEnum identificationType, double amount);
+        bool Deposit(string originAccount, string destinyAccount, string identification, IdentificationTypeEnum identificationType, decimal amount);
 
         /// <summary>
         /// Envia el retiro a realizar a la capa de integracion, 
@@ -53,6 +53,6 @@ namespace CashBox.Services
         /// <param name="identificationType">IdentificationTypeEnum : Cedula = 1,  Passport = 2
         /// </param>
         /// <returns>Devuelve true si la transaccion (Retiro) fue efectuada</returns>
-        bool Retirement(string originAccount, string identification, IdentificationTypeEnum identificationType, double amount);
+        bool Retirement(string originAccount, string identification, IdentificationTypeEnum identificationType, decimal amount);
     }
 }

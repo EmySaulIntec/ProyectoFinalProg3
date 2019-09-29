@@ -5,7 +5,7 @@ namespace DatabaseProject.Models
     public class Transaction : BaseEntity
     {
         public TransactionTypeEnum TransactionType { get; set; }
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
         public string OriginAccount { get; set; }
 

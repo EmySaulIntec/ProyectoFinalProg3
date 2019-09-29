@@ -4,7 +4,7 @@ namespace CashBox.Services
 {
     public class IntegrationLayer : IIntegrationLayer
     {
-        public bool Deposit(string originAccount, string destinyAccount, string identification, IdentificationTypeEnum identificationType, double amount)
+        public bool Deposit(string originAccount, string destinyAccount, string identification, IdentificationTypeEnum identificationType, decimal amount)
         {
             return true;
         }
@@ -14,7 +14,7 @@ namespace CashBox.Services
             return "Rubert";
         }
 
-        public bool Retirement(string originAccount, string identification, IdentificationTypeEnum identificationType, double amount)
+        public bool Retirement(string originAccount, string identification, IdentificationTypeEnum identificationType, decimal amount)
         {
             return true;
         }

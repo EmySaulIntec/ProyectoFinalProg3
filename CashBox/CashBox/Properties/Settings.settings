@@ -14,7 +14,7 @@
     <Setting Name="EndMinute" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="Amount" Type="System.Double" Scope="User">
+    <Setting Name="Amount" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="CashIsOpen" Type="System.Boolean" Scope="User">
