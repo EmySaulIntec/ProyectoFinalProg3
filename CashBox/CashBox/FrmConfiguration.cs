@@ -1,14 +1,22 @@
-﻿using ProyectoFinalProg3;
+﻿using DatabaseProject.Models;
+using DatabaseProject.Repositories;
+using ProyectoFinalProg3;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CashBox
 {
     public partial class FrmConfiguration : Form
     {
+        private UnitOfWork unitOfWork;
+        private BaseRepository<DailyClose> _dailyCloseRepository;
+
         public FrmConfiguration()
         {
             InitializeComponent();
+            unitOfWork = new UnitOfWork();
+            _dailyCloseRepository = unitOfWork.Repository<DailyClose>();
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
@@ -42,6 +50,14 @@ namespace CashBox
 
         private void SetCashBox()
         {
+            var currentDate = DateTime.Now.Date;
+
+            if (_dailyCloseRepository.GetAll().Any(d => d.CreationTime >= currentDate && d.FinalAmount.HasValue))
+            {
+                btnCloseCash.Enabled = false;
+                txtCash.Enabled = false;
+            }
+
             CashBox cashBox = Settings.GetCashBox();
             txtCash.Text = cashBox.Amount.ToString();
 
@@ -107,7 +123,7 @@ namespace CashBox
                     e.Handled = true;
             }
 
-           
+
         }
 
         private void btnCloseCash_Click(object sender, EventArgs e)
@@ -121,8 +137,38 @@ namespace CashBox
             }
 
             Properties.Settings.Default.Amount = Convert.ToDouble(txtCash.Text);
-            Properties.Settings.Default.CashIsOpen = !Properties.Settings.Default.CashIsOpen;
+
+            var currentDate = DateTime.Now.Date;
+
+            DailyClose currentDailyClose = _dailyCloseRepository.GetAll().FirstOrDefault(d => d.CreationTime >= currentDate);
+
+
+            if (currentDailyClose == null)
+            {
+                _dailyCloseRepository.Insert(new DailyClose()
+                {
+                    CasherId = Settings.LoggedUser.Id,
+                    InitialAmount = Properties.Settings.Default.Amount
+                });
+
+                Properties.Settings.Default.CashIsOpen = true;
+            }
+            else if (!currentDailyClose.FinalAmount.HasValue)
+            {
+                currentDailyClose.FinalAmount = Properties.Settings.Default.Amount;
+
+                _dailyCloseRepository.Update(currentDailyClose);
+
+                Properties.Settings.Default.CashIsOpen = false;
+            }
+            else
+            {
+                MessageBox.Show("Caja ya fue cerrada.");
+                return;
+            }
+
             Properties.Settings.Default.Save();
+
             SetCashBox();
         }
     }

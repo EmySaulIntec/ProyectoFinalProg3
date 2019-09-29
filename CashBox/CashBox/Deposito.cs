@@ -51,7 +51,9 @@ namespace ProyectoFinalProg3
                             OriginAccount = txtNoCuenta.Text,
                             DestinyAccount = txtNoCuentaDestino.Text,
                             Identification = txtIdentification.Text,
-                            IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport
+                            IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport,
+                            Amount = amount,
+                            TransactionType = TransactionTypeEnum.Deposit
                         });
 
                         FrmHome abrir = new FrmHome();

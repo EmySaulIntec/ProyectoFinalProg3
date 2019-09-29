@@ -11,5 +11,6 @@ namespace DatabaseProject.Models
     {
         public long Id { get; set; }
         public DateTime CreationTime { get; private set; } = DateTime.Now;
+        public DateTime? UpdateTime { get;  set; } = DateTime.Now;
     }
 }

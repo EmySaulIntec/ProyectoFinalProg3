@@ -96,7 +96,7 @@
             this.txtIdentification.Location = new System.Drawing.Point(519, 217);
             this.txtIdentification.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdentification.Name = "txtIdentification";
-            this.txtIdentification.Size = new System.Drawing.Size(124, 22);
+            this.txtIdentification.Size = new System.Drawing.Size(213, 22);
             this.txtIdentification.TabIndex = 12;
             // 
             // lblCedulaoPasaporte
@@ -208,7 +208,7 @@
             this.groupBox1.Controls.Add(this.radioIdentification);
             this.groupBox1.Controls.Add(this.radioPassport);
             this.groupBox1.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(676, 189);
+            this.groupBox1.Location = new System.Drawing.Point(760, 197);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(236, 69);
             this.groupBox1.TabIndex = 24;

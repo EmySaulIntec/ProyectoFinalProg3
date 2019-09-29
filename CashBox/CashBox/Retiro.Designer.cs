@@ -33,12 +33,16 @@
             this.btnRetirar = new System.Windows.Forms.Button();
             this.lblNoCuenta = new System.Windows.Forms.Label();
             this.txtNoCuenta = new System.Windows.Forms.TextBox();
-            this.txtCedulaoPasaporte = new System.Windows.Forms.TextBox();
+            this.txtIdentification = new System.Windows.Forms.TextBox();
             this.lblCedulaoPasaporte = new System.Windows.Forms.Label();
             this.lblRetiro = new System.Windows.Forms.Label();
             this.lblBankintoch = new System.Windows.Forms.Label();
             this.lblMontoaRetirar = new System.Windows.Forms.Label();
             this.txtMontoaRetirar = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioIdentification = new System.Windows.Forms.RadioButton();
+            this.radioPassport = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -89,11 +93,11 @@
             // 
             // txtCedulaoPasaporte
             // 
-            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(524, 286);
-            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
-            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
-            this.txtCedulaoPasaporte.TabIndex = 24;
+            this.txtIdentification.Location = new System.Drawing.Point(524, 286);
+            this.txtIdentification.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdentification.Name = "txtCedulaoPasaporte";
+            this.txtIdentification.Size = new System.Drawing.Size(213, 22);
+            this.txtIdentification.TabIndex = 24;
             // 
             // lblCedulaoPasaporte
             // 
@@ -152,6 +156,43 @@
             this.txtMontoaRetirar.TabIndex = 35;
             this.txtMontoaRetirar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoaRetirar_KeyPress);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.radioIdentification);
+            this.groupBox1.Controls.Add(this.radioPassport);
+            this.groupBox1.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(762, 260);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(236, 69);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de Identificacion";
+            // 
+            // radioIdentification
+            // 
+            this.radioIdentification.AutoSize = true;
+            this.radioIdentification.BackColor = System.Drawing.Color.Transparent;
+            this.radioIdentification.Checked = true;
+            this.radioIdentification.Location = new System.Drawing.Point(18, 38);
+            this.radioIdentification.Name = "radioIdentification";
+            this.radioIdentification.Size = new System.Drawing.Size(85, 21);
+            this.radioIdentification.TabIndex = 22;
+            this.radioIdentification.TabStop = true;
+            this.radioIdentification.Text = "Cedula";
+            this.radioIdentification.UseVisualStyleBackColor = false;
+            // 
+            // radioPassport
+            // 
+            this.radioPassport.AutoSize = true;
+            this.radioPassport.BackColor = System.Drawing.Color.Transparent;
+            this.radioPassport.Location = new System.Drawing.Point(116, 37);
+            this.radioPassport.Name = "radioPassport";
+            this.radioPassport.Size = new System.Drawing.Size(117, 21);
+            this.radioPassport.TabIndex = 23;
+            this.radioPassport.Text = "Pasaporte";
+            this.radioPassport.UseVisualStyleBackColor = false;
+            // 
             // FrmmRetirement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -161,13 +202,14 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtMontoaRetirar);
             this.Controls.Add(this.lblMontoaRetirar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRetirar);
             this.Controls.Add(this.lblNoCuenta);
             this.Controls.Add(this.txtNoCuenta);
-            this.Controls.Add(this.txtCedulaoPasaporte);
+            this.Controls.Add(this.txtIdentification);
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblRetiro);
             this.Controls.Add(this.lblBankintoch);
@@ -176,6 +218,8 @@
             this.MinimizeBox = false;
             this.Name = "FrmmRetirement";
             this.Text = "Retiro";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,11 +231,14 @@
         private System.Windows.Forms.Button btnRetirar;
         private System.Windows.Forms.Label lblNoCuenta;
         private System.Windows.Forms.TextBox txtNoCuenta;
-        private System.Windows.Forms.TextBox txtCedulaoPasaporte;
+        private System.Windows.Forms.TextBox txtIdentification;
         private System.Windows.Forms.Label lblCedulaoPasaporte;
         private System.Windows.Forms.Label lblRetiro;
         private System.Windows.Forms.Label lblBankintoch;
         private System.Windows.Forms.Label lblMontoaRetirar;
         private System.Windows.Forms.TextBox txtMontoaRetirar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioIdentification;
+        private System.Windows.Forms.RadioButton radioPassport;
     }
 }

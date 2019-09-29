@@ -1,4 +1,6 @@
 ﻿using CashBox;
+using DatabaseProject.Models;
+using DatabaseProject.Repositories;
 using System;
 using System.Windows.Forms;
 
@@ -6,9 +8,13 @@ namespace ProyectoFinalProg3
 {
     public partial class FrmmRetirement : Form
     {
+        private UnitOfWork unitOfWork;
+        private BaseRepository<Transaction> _transactionRepository;
         public FrmmRetirement()
         {
             InitializeComponent();
+            unitOfWork = new UnitOfWork();
+            _transactionRepository = unitOfWork.Repository<Transaction>();
         }
 
         private void BtnRetirar_Click(object sender, EventArgs e)
@@ -19,7 +25,7 @@ namespace ProyectoFinalProg3
                 return;
             }
 
-            if (txtCedulaoPasaporte.Text == "402-1277899-3")
+            if (txtIdentification.Text == "402-1277899-3")
             {
                 if (txtNoCuenta.Text == "123456789")
                 {
@@ -31,7 +37,18 @@ namespace ProyectoFinalProg3
                         return;
                     }
 
-                    MessageBox.Show("El Usuario es Rubert, Portador de la cedula [" + txtCedulaoPasaporte.Text + "] y de numero de cuenta [" + txtNoCuenta.Text + "] realizo un retiro de [" + txtMontoaRetirar.Text + " pesos] de la cuenta [" + txtNoCuenta.Text + "]");
+                    _transactionRepository.Insert(new Transaction()
+                    {
+                        CasherId = Settings.LoggedUser.Id,
+                        OriginAccount = txtNoCuenta.Text,
+                        Identification = txtIdentification.Text,
+                        IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport,
+                        Amount = amount,
+                        TransactionType = TransactionTypeEnum.Retirement
+                    });
+
+
+                    MessageBox.Show("El Usuario es Rubert, Portador de la cedula [" + txtIdentification.Text + "] y de numero de cuenta [" + txtNoCuenta.Text + "] realizo un retiro de [" + txtMontoaRetirar.Text + " pesos] de la cuenta [" + txtNoCuenta.Text + "]");
                     FrmHome abrir = new FrmHome();
                     abrir.Show();
                     this.Hide();

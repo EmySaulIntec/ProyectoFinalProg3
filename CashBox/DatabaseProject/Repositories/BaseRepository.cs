@@ -56,6 +56,8 @@ namespace DatabaseProject.Repositories
                 {
                     throw new ArgumentNullException("entity");
                 }
+
+                entity.UpdateTime = DateTime.Now;
                 this.context.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)

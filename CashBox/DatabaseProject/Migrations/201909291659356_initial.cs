@@ -13,9 +13,10 @@
                     {
                         Id = c.Long(nullable: false, identity: true),
                         InitialAmount = c.Double(nullable: false),
-                        FinalAmount = c.Double(nullable: false),
+                        FinalAmount = c.Double(),
                         CasherId = c.Long(nullable: false),
                         CreationTime = c.DateTime(nullable: false),
+                        UpdateTime = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CasherId, cascadeDelete: true)
@@ -33,6 +34,7 @@
                         Email = c.String(),
                         IsAdmin = c.Boolean(nullable: false),
                         CreationTime = c.DateTime(nullable: false),
+                        UpdateTime = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -49,6 +51,7 @@
                         Identification = c.String(),
                         IdentificationType = c.Int(),
                         CreationTime = c.DateTime(nullable: false),
+                        UpdateTime = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Users", t => t.CasherId, cascadeDelete: true)
