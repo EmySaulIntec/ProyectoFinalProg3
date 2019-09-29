@@ -44,9 +44,10 @@
             this.lblBankintoch.AutoSize = true;
             this.lblBankintoch.BackColor = System.Drawing.Color.Transparent;
             this.lblBankintoch.Font = new System.Drawing.Font("Stencil", 36.75F);
-            this.lblBankintoch.Location = new System.Drawing.Point(244, 22);
+            this.lblBankintoch.Location = new System.Drawing.Point(325, 27);
+            this.lblBankintoch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBankintoch.Name = "lblBankintoch";
-            this.lblBankintoch.Size = new System.Drawing.Size(335, 59);
+            this.lblBankintoch.Size = new System.Drawing.Size(426, 73);
             this.lblBankintoch.TabIndex = 1;
             this.lblBankintoch.Text = "BANKINTOCH";
             this.lblBankintoch.Click += new System.EventHandler(this.LblBankintoch_Click);
@@ -56,24 +57,27 @@
             this.lblCedulaoPasaporte.AutoSize = true;
             this.lblCedulaoPasaporte.BackColor = System.Drawing.Color.Transparent;
             this.lblCedulaoPasaporte.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedulaoPasaporte.Location = new System.Drawing.Point(163, 268);
+            this.lblCedulaoPasaporte.Location = new System.Drawing.Point(217, 330);
+            this.lblCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedulaoPasaporte.Name = "lblCedulaoPasaporte";
-            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(174, 19);
+            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(219, 24);
             this.lblCedulaoPasaporte.TabIndex = 2;
             this.lblCedulaoPasaporte.Text = "Cedula o Pasaporte";
             // 
             // txtCedulaoPasaporte
             // 
-            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(343, 267);
+            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(457, 329);
+            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
-            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(161, 20);
+            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
             this.txtCedulaoPasaporte.TabIndex = 3;
             // 
             // txtNoCuenta
             // 
-            this.txtNoCuenta.Location = new System.Drawing.Point(291, 340);
+            this.txtNoCuenta.Location = new System.Drawing.Point(457, 418);
+            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNoCuenta.Name = "txtNoCuenta";
-            this.txtNoCuenta.Size = new System.Drawing.Size(161, 20);
+            this.txtNoCuenta.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuenta.TabIndex = 4;
             // 
             // lblNoCuenta
@@ -81,9 +85,10 @@
             this.lblNoCuenta.AutoSize = true;
             this.lblNoCuenta.BackColor = System.Drawing.Color.Transparent;
             this.lblNoCuenta.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCuenta.Location = new System.Drawing.Point(167, 340);
+            this.lblNoCuenta.Location = new System.Drawing.Point(223, 418);
+            this.lblNoCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoCuenta.Name = "lblNoCuenta";
-            this.lblNoCuenta.Size = new System.Drawing.Size(99, 19);
+            this.lblNoCuenta.Size = new System.Drawing.Size(122, 24);
             this.lblNoCuenta.TabIndex = 5;
             this.lblNoCuenta.Text = "No. Cuenta";
             // 
@@ -91,9 +96,10 @@
             // 
             this.btnValidar.BackColor = System.Drawing.Color.Transparent;
             this.btnValidar.Font = new System.Drawing.Font("Stencil", 15F);
-            this.btnValidar.Location = new System.Drawing.Point(547, 405);
+            this.btnValidar.Location = new System.Drawing.Point(729, 498);
+            this.btnValidar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnValidar.Name = "btnValidar";
-            this.btnValidar.Size = new System.Drawing.Size(107, 33);
+            this.btnValidar.Size = new System.Drawing.Size(143, 41);
             this.btnValidar.TabIndex = 6;
             this.btnValidar.Text = "Validar";
             this.btnValidar.UseVisualStyleBackColor = false;
@@ -103,9 +109,10 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Font = new System.Drawing.Font("Stencil", 15F);
-            this.btnCancelar.Location = new System.Drawing.Point(665, 405);
+            this.btnCancelar.Location = new System.Drawing.Point(887, 498);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(123, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(164, 38);
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -116,20 +123,21 @@
             this.lblValidarCliente.AutoSize = true;
             this.lblValidarCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblValidarCliente.Font = new System.Drawing.Font("Stencil", 18F);
-            this.lblValidarCliente.Location = new System.Drawing.Point(298, 112);
+            this.lblValidarCliente.Location = new System.Drawing.Point(397, 138);
+            this.lblValidarCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblValidarCliente.Name = "lblValidarCliente";
-            this.lblValidarCliente.Size = new System.Drawing.Size(214, 29);
+            this.lblValidarCliente.Size = new System.Drawing.Size(267, 35);
             this.lblValidarCliente.TabIndex = 8;
             this.lblValidarCliente.Text = "Validar Cliente";
             // 
             // ValidarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lblValidarCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnValidar);
@@ -138,6 +146,7 @@
             this.Controls.Add(this.txtCedulaoPasaporte);
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblBankintoch);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ValidarCliente";

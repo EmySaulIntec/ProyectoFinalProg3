@@ -48,9 +48,10 @@
             this.lblDeposito.AutoSize = true;
             this.lblDeposito.BackColor = System.Drawing.Color.Transparent;
             this.lblDeposito.Font = new System.Drawing.Font("Stencil", 20F);
-            this.lblDeposito.Location = new System.Drawing.Point(323, 105);
+            this.lblDeposito.Location = new System.Drawing.Point(431, 129);
+            this.lblDeposito.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeposito.Name = "lblDeposito";
-            this.lblDeposito.Size = new System.Drawing.Size(142, 32);
+            this.lblDeposito.Size = new System.Drawing.Size(177, 40);
             this.lblDeposito.TabIndex = 10;
             this.lblDeposito.Text = "Deposito";
             // 
@@ -59,9 +60,10 @@
             this.lblBankintoch.AutoSize = true;
             this.lblBankintoch.BackColor = System.Drawing.Color.Transparent;
             this.lblBankintoch.Font = new System.Drawing.Font("Stencil", 30.75F);
-            this.lblBankintoch.Location = new System.Drawing.Point(259, 41);
+            this.lblBankintoch.Location = new System.Drawing.Point(345, 50);
+            this.lblBankintoch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBankintoch.Name = "lblBankintoch";
-            this.lblBankintoch.Size = new System.Drawing.Size(279, 48);
+            this.lblBankintoch.Size = new System.Drawing.Size(356, 61);
             this.lblBankintoch.TabIndex = 9;
             this.lblBankintoch.Text = "BANKINTOCH";
             // 
@@ -70,24 +72,27 @@
             this.lblNoCuenta.AutoSize = true;
             this.lblNoCuenta.BackColor = System.Drawing.Color.Transparent;
             this.lblNoCuenta.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCuenta.Location = new System.Drawing.Point(209, 229);
+            this.lblNoCuenta.Location = new System.Drawing.Point(279, 282);
+            this.lblNoCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoCuenta.Name = "lblNoCuenta";
-            this.lblNoCuenta.Size = new System.Drawing.Size(99, 19);
+            this.lblNoCuenta.Size = new System.Drawing.Size(122, 24);
             this.lblNoCuenta.TabIndex = 14;
             this.lblNoCuenta.Text = "No. Cuenta";
             // 
             // txtNoCuenta
             // 
-            this.txtNoCuenta.Location = new System.Drawing.Point(333, 229);
+            this.txtNoCuenta.Location = new System.Drawing.Point(519, 282);
+            this.txtNoCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNoCuenta.Name = "txtNoCuenta";
-            this.txtNoCuenta.Size = new System.Drawing.Size(161, 20);
+            this.txtNoCuenta.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuenta.TabIndex = 13;
             // 
             // txtCedulaoPasaporte
             // 
-            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(389, 176);
+            this.txtCedulaoPasaporte.Location = new System.Drawing.Point(519, 217);
+            this.txtCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCedulaoPasaporte.Name = "txtCedulaoPasaporte";
-            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(161, 20);
+            this.txtCedulaoPasaporte.Size = new System.Drawing.Size(213, 22);
             this.txtCedulaoPasaporte.TabIndex = 12;
             // 
             // lblCedulaoPasaporte
@@ -95,9 +100,10 @@
             this.lblCedulaoPasaporte.AutoSize = true;
             this.lblCedulaoPasaporte.BackColor = System.Drawing.Color.Transparent;
             this.lblCedulaoPasaporte.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCedulaoPasaporte.Location = new System.Drawing.Point(209, 177);
+            this.lblCedulaoPasaporte.Location = new System.Drawing.Point(279, 218);
+            this.lblCedulaoPasaporte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCedulaoPasaporte.Name = "lblCedulaoPasaporte";
-            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(174, 19);
+            this.lblCedulaoPasaporte.Size = new System.Drawing.Size(219, 24);
             this.lblCedulaoPasaporte.TabIndex = 11;
             this.lblCedulaoPasaporte.Text = "Cedula o Pasaporte";
             // 
@@ -106,26 +112,29 @@
             this.lblMontoaDepositar.AutoSize = true;
             this.lblMontoaDepositar.BackColor = System.Drawing.Color.Transparent;
             this.lblMontoaDepositar.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoaDepositar.Location = new System.Drawing.Point(209, 332);
+            this.lblMontoaDepositar.Location = new System.Drawing.Point(279, 409);
+            this.lblMontoaDepositar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontoaDepositar.Name = "lblMontoaDepositar";
-            this.lblMontoaDepositar.Size = new System.Drawing.Size(166, 19);
+            this.lblMontoaDepositar.Size = new System.Drawing.Size(207, 24);
             this.lblMontoaDepositar.TabIndex = 18;
             this.lblMontoaDepositar.Text = "Monto a Depositar";
             // 
             // txtMontoaDepositar
             // 
-            this.txtMontoaDepositar.Location = new System.Drawing.Point(389, 333);
+            this.txtMontoaDepositar.Location = new System.Drawing.Point(519, 410);
+            this.txtMontoaDepositar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMontoaDepositar.Name = "txtMontoaDepositar";
-            this.txtMontoaDepositar.Size = new System.Drawing.Size(161, 20);
+            this.txtMontoaDepositar.Size = new System.Drawing.Size(213, 22);
             this.txtMontoaDepositar.TabIndex = 17;
             // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.Font = new System.Drawing.Font("Stencil", 15F);
-            this.btnCancelar.Location = new System.Drawing.Point(665, 407);
+            this.btnCancelar.Location = new System.Drawing.Point(887, 501);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(123, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(164, 38);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -135,9 +144,10 @@
             // 
             this.btnDepositar.BackColor = System.Drawing.Color.Transparent;
             this.btnDepositar.Font = new System.Drawing.Font("Stencil", 15F);
-            this.btnDepositar.Location = new System.Drawing.Point(526, 407);
+            this.btnDepositar.Location = new System.Drawing.Point(701, 501);
+            this.btnDepositar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(128, 33);
+            this.btnDepositar.Size = new System.Drawing.Size(171, 41);
             this.btnDepositar.TabIndex = 19;
             this.btnDepositar.Text = "Depositar";
             this.btnDepositar.UseVisualStyleBackColor = false;
@@ -145,9 +155,10 @@
             // 
             // txtNoCuentaDestino
             // 
-            this.txtNoCuentaDestino.Location = new System.Drawing.Point(389, 277);
+            this.txtNoCuentaDestino.Location = new System.Drawing.Point(519, 341);
+            this.txtNoCuentaDestino.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNoCuentaDestino.Name = "txtNoCuentaDestino";
-            this.txtNoCuentaDestino.Size = new System.Drawing.Size(161, 20);
+            this.txtNoCuentaDestino.Size = new System.Drawing.Size(213, 22);
             this.txtNoCuentaDestino.TabIndex = 15;
             // 
             // lblNoCuentaDestino
@@ -155,20 +166,21 @@
             this.lblNoCuentaDestino.AutoSize = true;
             this.lblNoCuentaDestino.BackColor = System.Drawing.Color.Transparent;
             this.lblNoCuentaDestino.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoCuentaDestino.Location = new System.Drawing.Point(209, 277);
+            this.lblNoCuentaDestino.Location = new System.Drawing.Point(279, 341);
+            this.lblNoCuentaDestino.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNoCuentaDestino.Name = "lblNoCuentaDestino";
-            this.lblNoCuentaDestino.Size = new System.Drawing.Size(168, 19);
+            this.lblNoCuentaDestino.Size = new System.Drawing.Size(209, 24);
             this.lblNoCuentaDestino.TabIndex = 16;
             this.lblNoCuentaDestino.Text = "No. Cuenta Destino";
             // 
             // Deposito
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnDepositar);
             this.Controls.Add(this.lblMontoaDepositar);
@@ -181,6 +193,7 @@
             this.Controls.Add(this.lblCedulaoPasaporte);
             this.Controls.Add(this.lblDeposito);
             this.Controls.Add(this.lblBankintoch);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Deposito";

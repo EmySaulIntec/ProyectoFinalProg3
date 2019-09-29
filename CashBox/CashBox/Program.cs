@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ProyectoFinalProg3;
+using System;
 using System.Windows.Forms;
 
 namespace CashBox
@@ -16,7 +14,7 @@ namespace CashBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmUser());
+            Application.Run(new Inicio());
         }
     }
 }
