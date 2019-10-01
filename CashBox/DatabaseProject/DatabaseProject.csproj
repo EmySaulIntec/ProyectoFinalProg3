@@ -67,13 +67,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\CashDbContext.cs" />
-    <Compile Include="Migrations\201909291907264_added v.cs" />
-    <Compile Include="Migrations\201909291907264_added v.designer.cs">
-      <DependentUpon>201909291907264_added v.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909291950452_change double to decimal.cs" />
-    <Compile Include="Migrations\201909291950452_change double to decimal.designer.cs">
-      <DependentUpon>201909291950452_change double to decimal.cs</DependentUpon>
+    <Compile Include="Migrations\201910011903193_initial.cs" />
+    <Compile Include="Migrations\201910011903193_initial.designer.cs">
+      <DependentUpon>201910011903193_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -104,11 +100,8 @@
     <Folder Include="Db\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909291907264_added v.resx">
-      <DependentUpon>201909291907264_added v.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909291950452_change double to decimal.resx">
-      <DependentUpon>201909291950452_change double to decimal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910011903193_initial.resx">
+      <DependentUpon>201910011903193_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

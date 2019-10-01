@@ -34,7 +34,6 @@ namespace CashBox.Services
                         if (_integrationLayer.Deposit(transaction.OriginAccount, transaction.DestinyAccount, transaction.Identification, transaction.IdentificationType, transaction.Amount))
                         {
                             transaction.Status = TransactionStatusEnum.Completed;
-                            Settings.AddToCash(transaction.Amount);
 
                             string clientFullName = _integrationLayer.GetClient(transaction.OriginAccount);
                             MessageBox.Show($"El cliente {clientFullName}, Portador de la cedula [{ transaction.Identification }] y de numero de cuenta [{ transaction.OriginAccount}] realizo un deposito de [{ transaction.Amount } " +
@@ -43,17 +42,21 @@ namespace CashBox.Services
                         else
                         {
                             transaction.Status = TransactionStatusEnum.Incompleted;
-                            MessageBox.Show("Transaccion no efectuada, intentelo mas tarde. Enviada a transacciones fallidas");
+                            MessageBox.Show("Su trasmsaccion ha sido efectuada correctamente. Estaremos dandole seguimeiento a esta transacción " +
+                                "por motivos internos.");
                         }
 
                         if (transaction.Id != 0)
                         {
-                            var t = _transactionRepository.GetById(transaction.Id);
-                            t.Status = transaction.Status;
-                            _transactionRepository.Update(t);
+                            var currentTransaction = _transactionRepository.GetById(transaction.Id);
+                            currentTransaction.Status = transaction.Status;
+                            _transactionRepository.Update(currentTransaction);
                         }
                         else
+                        {
                             _transactionRepository.Insert(transaction);
+                            Settings.AddToCash(transaction.Amount);
+                        }
                     }
                     else
                     {

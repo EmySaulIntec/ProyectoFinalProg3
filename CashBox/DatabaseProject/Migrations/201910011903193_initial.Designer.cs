@@ -7,13 +7,13 @@ namespace DatabaseProject.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0-rc1-19458-04")]
-    public sealed partial class changedoubletodecimal : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changedoubletodecimal));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201909291950452_change double to decimal"; }
+            get { return "201910011903193_initial"; }
         }
         
         string IMigrationMetadata.Source

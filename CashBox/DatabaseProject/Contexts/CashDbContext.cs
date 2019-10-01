@@ -8,7 +8,7 @@ namespace DatabaseProject.Contexts
 {
     public class CashDbContext : DbContext
     {
-        public CashDbContext() : base("MyCashDb")
+        public CashDbContext() : base("ConnStringDb1")
         {
 
         }
