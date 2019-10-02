@@ -28,7 +28,7 @@ namespace ProyectoFinalProg3
         {
             if (string.IsNullOrEmpty(txtMontoaRetirar.Text) || txtMontoaRetirar.Text.Trim() == "0")
             {
-                MessageBox.Show("Monto no valido");
+                MessageBox.Show("Monto no valido", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

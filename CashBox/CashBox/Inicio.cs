@@ -32,7 +32,7 @@ namespace ProyectoFinalProg3
         {
             if (!Settings.CanDoTransactions())
             {
-                MessageBox.Show("No se permiten transacciones caja cerrada");
+                MessageBox.Show("No se permiten transacciones caja cerrada", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -46,13 +46,13 @@ namespace ProyectoFinalProg3
             
             if (!Settings.LoggedUser.IsCasher)
             {
-                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.");
+                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!Settings.CanDoTransactions())
             {
-                MessageBox.Show("No se permiten transacciones caja cerrada");
+                MessageBox.Show("No se permiten transacciones caja cerrada", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -66,13 +66,13 @@ namespace ProyectoFinalProg3
         {
             if (!Settings.LoggedUser.IsCasher)
             {
-                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.");
+                MessageBox.Show("Este usuario no es un cajero, no puede realizar esta transacción.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             
             if (!Settings.CanDoTransactions())
             {
-                MessageBox.Show("No se permiten transacciones caja cerrada");
+                MessageBox.Show("No se permiten transacciones caja cerrada", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

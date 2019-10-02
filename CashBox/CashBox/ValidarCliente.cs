@@ -37,7 +37,7 @@ namespace ProyectoFinalProg3
                 {
                     string clientFullName = _integrationLayer.GetClient(txtNoCuenta.Text);
 
-                    MessageBox.Show($"Cliente {clientFullName}, Portador de la cedula { txtIdentification.Text } y de numero de cuenta { txtNoCuenta.Text } es valido!");
+                    MessageBox.Show($"Cliente {clientFullName}, Portador de la cedula { txtIdentification.Text } y de numero de cuenta { txtNoCuenta.Text } es valido!", "Informacion", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     FrmHome abrir = new FrmHome();
                     abrir.Show();
                     this.Hide();
@@ -45,12 +45,12 @@ namespace ProyectoFinalProg3
                 else
                 {
 
-                    MessageBox.Show("El numero de cuenta es incorrecto");
+                    MessageBox.Show("El numero de cuenta es incorrecto", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("El numero de cedula es incorrecto");
+                MessageBox.Show("El numero de cedula es incorrecto", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -39,13 +39,13 @@ namespace CashBox
         {
             if (string.IsNullOrEmpty(txtUserName.Text))
             {
-                MessageBox.Show("Nombre de usuario invalido");
+                MessageBox.Show("Nombre de usuario invalido","Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (_userRepository.GetAll().Any(u => u.UserName == txtUserName.Text))
             {
-                MessageBox.Show("Este usuario existe");
+                MessageBox.Show("Este usuario existe","Warning", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -61,7 +61,7 @@ namespace CashBox
             SelectedUser = null;
             lblUser.Text = string.Empty;
             Init();
-            MessageBox.Show("Usuario creado");
+            MessageBox.Show("Usuario creado",MessageBoxIcon.Information.ToString());
 
         }
 
@@ -69,7 +69,7 @@ namespace CashBox
         {
             if (string.IsNullOrEmpty(txtUserName.Text))
             {
-                MessageBox.Show("Nombre de usuario invalido");
+                MessageBox.Show("Nombre de usuario invalido", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -77,7 +77,7 @@ namespace CashBox
             {
                 if (_userRepository.GetAll().Any(u => u.Id != SelectedUser.Id && u.UserName == txtUserName.Text))
                 {
-                    MessageBox.Show("Este usuario existe");
+                    MessageBox.Show("Este usuario existe", "Warning",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
@@ -94,11 +94,11 @@ namespace CashBox
                 if (Settings.LoggedUser.Id == SelectedUser.Id)
                     Settings.LoggedUser = SelectedUser;
 
-                MessageBox.Show("Usuario modificado");
+                MessageBox.Show("Usuario modificado","Informacion", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Seleccione un usuario.");
+                MessageBox.Show("Seleccione un usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -151,7 +151,7 @@ namespace CashBox
             }
             else
             {
-                MessageBox.Show("Seleccione un usuario.");
+                MessageBox.Show("Seleccione un usuario.","Error", MessageBoxButtons.OK,MessageBoxIcon.Question);
             }
         }
 
@@ -172,7 +172,7 @@ namespace CashBox
                 frmLogin.Show();
                 this.Close();
              
-                MessageBox.Show("Usuario Desactivado");
+                MessageBox.Show("Usuario Desactivado", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
         }
