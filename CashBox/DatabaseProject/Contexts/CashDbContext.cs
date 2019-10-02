@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace DatabaseProject.Contexts
 {
     public class CashDbContext : DbContext
     {
-        public CashDbContext() : base("ConnStringDb1")
+        public CashDbContext() : base("con")
         {
-
+            var a = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
 
         // Mis modelos o entidades
