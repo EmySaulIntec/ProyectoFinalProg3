@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFailedTransactions));
             this.listUsers = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,10 +53,10 @@
             // listUsers
             // 
             this.listUsers.FormattingEnabled = true;
-            this.listUsers.ItemHeight = 16;
+            this.listUsers.ItemHeight = 12;
             this.listUsers.Location = new System.Drawing.Point(21, 68);
             this.listUsers.Name = "listUsers";
-            this.listUsers.Size = new System.Drawing.Size(252, 260);
+            this.listUsers.Size = new System.Drawing.Size(252, 256);
             this.listUsers.TabIndex = 10;
             this.listUsers.SelectedIndexChanged += new System.EventHandler(this.listUsers_SelectedIndexChanged);
             // 
@@ -65,7 +66,7 @@
             this.label5.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(27, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 17);
+            this.label5.Size = new System.Drawing.Size(143, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Transacciones Fallidas";
             // 
@@ -75,7 +76,7 @@
             this.label1.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(338, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 17);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 18;
             this.label1.Text = "Cuenta Origen";
             // 
@@ -85,7 +86,7 @@
             this.label3.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(595, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.Size = new System.Drawing.Size(108, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "Cuenta Destino";
             // 
@@ -95,7 +96,7 @@
             this.label4.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(787, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 17);
+            this.label4.Size = new System.Drawing.Size(142, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Tipo de Transaccion";
             // 
@@ -105,7 +106,7 @@
             this.label6.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(595, 79);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 17);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "Cajero";
             // 
@@ -115,7 +116,7 @@
             this.label7.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(338, 79);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(162, 17);
+            this.label7.Size = new System.Drawing.Size(128, 13);
             this.label7.TabIndex = 22;
             this.label7.Text = "No. Identificacion";
             // 
@@ -140,7 +141,7 @@
             this.radioIdentification.Checked = true;
             this.radioIdentification.Location = new System.Drawing.Point(18, 38);
             this.radioIdentification.Name = "radioIdentification";
-            this.radioIdentification.Size = new System.Drawing.Size(85, 21);
+            this.radioIdentification.Size = new System.Drawing.Size(70, 17);
             this.radioIdentification.TabIndex = 22;
             this.radioIdentification.TabStop = true;
             this.radioIdentification.Text = "Cedula";
@@ -152,7 +153,7 @@
             this.radioPassport.BackColor = System.Drawing.Color.Transparent;
             this.radioPassport.Location = new System.Drawing.Point(116, 37);
             this.radioPassport.Name = "radioPassport";
-            this.radioPassport.Size = new System.Drawing.Size(117, 21);
+            this.radioPassport.Size = new System.Drawing.Size(96, 17);
             this.radioPassport.TabIndex = 23;
             this.radioPassport.Text = "Pasaporte";
             this.radioPassport.UseVisualStyleBackColor = false;
@@ -176,7 +177,7 @@
             this.lblNoIdentification.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblNoIdentification.Location = new System.Drawing.Point(338, 96);
             this.lblNoIdentification.Name = "lblNoIdentification";
-            this.lblNoIdentification.Size = new System.Drawing.Size(0, 17);
+            this.lblNoIdentification.Size = new System.Drawing.Size(0, 13);
             this.lblNoIdentification.TabIndex = 44;
             // 
             // lblCasher
@@ -185,7 +186,7 @@
             this.lblCasher.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblCasher.Location = new System.Drawing.Point(595, 96);
             this.lblCasher.Name = "lblCasher";
-            this.lblCasher.Size = new System.Drawing.Size(0, 17);
+            this.lblCasher.Size = new System.Drawing.Size(0, 13);
             this.lblCasher.TabIndex = 43;
             // 
             // lblTransactionType
@@ -194,7 +195,7 @@
             this.lblTransactionType.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblTransactionType.Location = new System.Drawing.Point(787, 96);
             this.lblTransactionType.Name = "lblTransactionType";
-            this.lblTransactionType.Size = new System.Drawing.Size(0, 17);
+            this.lblTransactionType.Size = new System.Drawing.Size(0, 13);
             this.lblTransactionType.TabIndex = 42;
             // 
             // lblDestinyAccount
@@ -203,7 +204,7 @@
             this.lblDestinyAccount.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblDestinyAccount.Location = new System.Drawing.Point(595, 159);
             this.lblDestinyAccount.Name = "lblDestinyAccount";
-            this.lblDestinyAccount.Size = new System.Drawing.Size(0, 17);
+            this.lblDestinyAccount.Size = new System.Drawing.Size(0, 13);
             this.lblDestinyAccount.TabIndex = 41;
             // 
             // lblOriginAccount
@@ -212,7 +213,7 @@
             this.lblOriginAccount.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblOriginAccount.Location = new System.Drawing.Point(338, 159);
             this.lblOriginAccount.Name = "lblOriginAccount";
-            this.lblOriginAccount.Size = new System.Drawing.Size(0, 17);
+            this.lblOriginAccount.Size = new System.Drawing.Size(0, 13);
             this.lblOriginAccount.TabIndex = 40;
             // 
             // lblDate
@@ -221,7 +222,7 @@
             this.lblDate.Font = new System.Drawing.Font("Stencil", 7.8F);
             this.lblDate.Location = new System.Drawing.Point(774, 20);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(0, 17);
+            this.lblDate.Size = new System.Drawing.Size(0, 13);
             this.lblDate.TabIndex = 45;
             // 
             // button1
@@ -239,8 +240,10 @@
             // 
             // FrmFailedTransactions
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(994, 336);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDate);

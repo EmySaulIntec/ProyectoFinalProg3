@@ -131,7 +131,7 @@ namespace CashBox
             if (string.IsNullOrEmpty(txtCash.Text))
                 txtCash.Text = "0";
 
-            if (MessageBox.Show($"Desea {btnCloseCash.Text} con {txtCash.Text}", btnCloseCash.Text, MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show($"Desea {btnCloseCash.Text} con {txtCash.Text}", btnCloseCash.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
             }
@@ -163,7 +163,7 @@ namespace CashBox
             }
             else
             {
-                MessageBox.Show("Caja ya fue cerrada.");
+                MessageBox.Show("Caja ya fue cerrada.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

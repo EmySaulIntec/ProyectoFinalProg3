@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConfiguration));
             this.cmbInitHour = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,9 +79,10 @@
             "21",
             "22",
             "23"});
-            this.cmbInitHour.Location = new System.Drawing.Point(35, 132);
+            this.cmbInitHour.Location = new System.Drawing.Point(26, 107);
+            this.cmbInitHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbInitHour.Name = "cmbInitHour";
-            this.cmbInitHour.Size = new System.Drawing.Size(48, 24);
+            this.cmbInitHour.Size = new System.Drawing.Size(37, 21);
             this.cmbInitHour.TabIndex = 0;
             this.cmbInitHour.SelectedIndexChanged += new System.EventHandler(this.cmbInitHour_SelectedIndexChanged);
             // 
@@ -88,9 +90,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 102);
+            this.label1.Location = new System.Drawing.Point(30, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Hora";
             // 
@@ -98,29 +101,34 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 102);
+            this.label2.Location = new System.Drawing.Point(80, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Minuto";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 66);
+            this.label3.Location = new System.Drawing.Point(29, 54);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.Size = new System.Drawing.Size(109, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Hora de inicio";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(253, 66);
+            this.label4.Location = new System.Drawing.Point(190, 54);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 20);
+            this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Hora de Cierre";
             // 
@@ -189,9 +197,10 @@
             "57",
             "58",
             "59"});
-            this.cmbInitMinut.Location = new System.Drawing.Point(109, 132);
+            this.cmbInitMinut.Location = new System.Drawing.Point(82, 107);
+            this.cmbInitMinut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbInitMinut.Name = "cmbInitMinut";
-            this.cmbInitMinut.Size = new System.Drawing.Size(53, 24);
+            this.cmbInitMinut.Size = new System.Drawing.Size(41, 21);
             this.cmbInitMinut.TabIndex = 10;
             this.cmbInitMinut.SelectedIndexChanged += new System.EventHandler(this.cmbInitMinut_SelectedIndexChanged);
             // 
@@ -199,9 +208,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(91, 139);
+            this.label7.Location = new System.Drawing.Point(68, 113);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 17);
+            this.label7.Size = new System.Drawing.Size(11, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = ":";
             // 
@@ -209,9 +219,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(305, 139);
+            this.label5.Location = new System.Drawing.Point(229, 113);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 17);
+            this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = ":";
             // 
@@ -280,9 +291,10 @@
             "57",
             "58",
             "59"});
-            this.cmbEndMinut.Location = new System.Drawing.Point(323, 132);
+            this.cmbEndMinut.Location = new System.Drawing.Point(242, 107);
+            this.cmbEndMinut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbEndMinut.Name = "cmbEndMinut";
-            this.cmbEndMinut.Size = new System.Drawing.Size(53, 24);
+            this.cmbEndMinut.Size = new System.Drawing.Size(41, 21);
             this.cmbEndMinut.TabIndex = 15;
             this.cmbEndMinut.SelectedIndexChanged += new System.EventHandler(this.cmbEndMinut_SelectedIndexChanged);
             // 
@@ -290,9 +302,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(320, 102);
+            this.label6.Location = new System.Drawing.Point(240, 83);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 17);
+            this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Minuto";
             // 
@@ -300,9 +313,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(254, 102);
+            this.label8.Location = new System.Drawing.Point(190, 83);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 17);
+            this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 13;
             this.label8.Text = "Hora";
             // 
@@ -335,19 +349,22 @@
             "21",
             "22",
             "23"});
-            this.cmbEndHour.Location = new System.Drawing.Point(248, 132);
+            this.cmbEndHour.Location = new System.Drawing.Point(186, 107);
+            this.cmbEndHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbEndHour.Name = "cmbEndHour";
-            this.cmbEndHour.Size = new System.Drawing.Size(49, 24);
+            this.cmbEndHour.Size = new System.Drawing.Size(38, 21);
             this.cmbEndHour.TabIndex = 12;
             this.cmbEndHour.SelectedIndexChanged += new System.EventHandler(this.cmbEndHour_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 24);
+            this.label9.Location = new System.Drawing.Point(9, 20);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(400, 25);
+            this.label9.Size = new System.Drawing.Size(332, 20);
             this.label9.TabIndex = 17;
             this.label9.Text = "Horario de Cierre para las transacciones";
             // 
@@ -355,10 +372,9 @@
             // 
             this.btnValidar.BackColor = System.Drawing.Color.Transparent;
             this.btnValidar.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValidar.Location = new System.Drawing.Point(200, 197);
-            this.btnValidar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnValidar.Location = new System.Drawing.Point(150, 160);
             this.btnValidar.Name = "btnValidar";
-            this.btnValidar.Size = new System.Drawing.Size(208, 30);
+            this.btnValidar.Size = new System.Drawing.Size(156, 24);
             this.btnValidar.TabIndex = 18;
             this.btnValidar.Text = "Guardar Cambios";
             this.btnValidar.UseVisualStyleBackColor = false;
@@ -368,10 +384,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(10, 197);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(8, 160);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 33);
+            this.button1.Size = new System.Drawing.Size(117, 27);
             this.button1.TabIndex = 19;
             this.button1.Text = "Home";
             this.button1.UseVisualStyleBackColor = false;
@@ -380,18 +395,21 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 270);
+            this.label10.Location = new System.Drawing.Point(10, 219);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(459, 20);
+            this.label10.Size = new System.Drawing.Size(413, 17);
             this.label10.TabIndex = 20;
             this.label10.Text = "_____________________________________________";
             // 
             // txtCash
             // 
-            this.txtCash.Location = new System.Drawing.Point(17, 346);
+            this.txtCash.Location = new System.Drawing.Point(13, 281);
+            this.txtCash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCash.Name = "txtCash";
-            this.txtCash.Size = new System.Drawing.Size(149, 22);
+            this.txtCash.Size = new System.Drawing.Size(113, 20);
             this.txtCash.TabIndex = 21;
             this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -399,9 +417,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 313);
+            this.label11.Location = new System.Drawing.Point(17, 254);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 20);
+            this.label11.Size = new System.Drawing.Size(40, 17);
             this.label11.TabIndex = 22;
             this.label11.Text = "Caja";
             // 
@@ -409,10 +428,9 @@
             // 
             this.btnCloseCash.BackColor = System.Drawing.Color.Transparent;
             this.btnCloseCash.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCloseCash.Location = new System.Drawing.Point(238, 341);
-            this.btnCloseCash.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCloseCash.Location = new System.Drawing.Point(178, 277);
             this.btnCloseCash.Name = "btnCloseCash";
-            this.btnCloseCash.Size = new System.Drawing.Size(208, 30);
+            this.btnCloseCash.Size = new System.Drawing.Size(156, 24);
             this.btnCloseCash.TabIndex = 23;
             this.btnCloseCash.Text = "Abrir Caja";
             this.btnCloseCash.UseVisualStyleBackColor = false;
@@ -420,9 +438,10 @@
             // 
             // FrmConfiguration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 414);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(362, 336);
             this.ControlBox = false;
             this.Controls.Add(this.btnCloseCash);
             this.Controls.Add(this.label11);
@@ -443,6 +462,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbInitHour);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmConfiguration";
             this.Text = "FrmConfiguration";
             this.Load += new System.EventHandler(this.FrmConfiguration_Load);

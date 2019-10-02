@@ -46,10 +46,11 @@
             this.lblBankintoch.AutoSize = true;
             this.lblBankintoch.BackColor = System.Drawing.Color.Transparent;
             this.lblBankintoch.Font = new System.Drawing.Font("Stencil", 36.75F);
-            this.lblBankintoch.Location = new System.Drawing.Point(352, 44);
+            this.lblBankintoch.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.lblBankintoch.Location = new System.Drawing.Point(418, 44);
             this.lblBankintoch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBankintoch.Name = "lblBankintoch";
-            this.lblBankintoch.Size = new System.Drawing.Size(426, 73);
+            this.lblBankintoch.Size = new System.Drawing.Size(335, 59);
             this.lblBankintoch.TabIndex = 0;
             this.lblBankintoch.Text = "BANKINTOCH";
             // 
@@ -115,7 +116,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 24);
             this.menuStrip1.TabIndex = 33;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,7 +124,7 @@
             // 
             this.usuariosToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(101, 26);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -131,7 +132,7 @@
             // 
             this.configuracionToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
             // 
@@ -139,13 +140,13 @@
             // 
             this.transaccionesFallidasToolStripMenuItem.Font = new System.Drawing.Font("Stencil", 9F, System.Drawing.FontStyle.Bold);
             this.transaccionesFallidasToolStripMenuItem.Name = "transaccionesFallidasToolStripMenuItem";
-            this.transaccionesFallidasToolStripMenuItem.Size = new System.Drawing.Size(230, 26);
+            this.transaccionesFallidasToolStripMenuItem.Size = new System.Drawing.Size(190, 20);
             this.transaccionesFallidasToolStripMenuItem.Text = "Transacciones Fallidas";
             this.transaccionesFallidasToolStripMenuItem.Click += new System.EventHandler(this.transaccionesFallidasToolStripMenuItem_Click);
             // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
