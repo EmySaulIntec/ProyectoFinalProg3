@@ -1,51 +1,47 @@
-﻿using System;
+﻿
 
 namespace CashBox.Utils
 {
-    class CoinChange
+
+    public class CoinChange
     {
-
-        public static int F(int[] monedas, int monto)
+        public static int[] MinChange(int[] denom, int changeAmount)
         {
-            return F(monedas, monto, 0);
-        }
+            int n = denom.Length;
+            int[] count = new int[changeAmount + 1];
+            int[] from = new int[changeAmount + 1];
 
-        static int[,] p;
-        private static int F(int[] monedas, int monto, int n)
-        {
-            if (monto == 0)
-                return 0;
+            count[0] = 1;
+            for (int i = 0; i < changeAmount; i++)
+                if (count[i] > 0)
+                    for (int j = 0; j < n; j++)
+                    {
+                        int p = i + denom[j];
+                        if (p <= changeAmount)
+                        {
+                            if (count[p] == 0 || count[p] > count[i] + 1)
+                            {
+                                count[p] = count[i] + 1;
+                                from[p] = j;
+                            }
+                        }
+                    }
 
-            if (monto < 0)
-                return int.MaxValue;
+            // No solutions:
+            if (count[changeAmount] == 0)
+                return null;
 
-            if (n >= monedas.Length)
-                return int.MaxValue;
-
-            int res = int.MaxValue;
-            for (int cantMonedas = 0; cantMonedas * monedas[n] <= monto;
-                cantMonedas++)
+            // Build answer.
+            int[] result = new int[count[changeAmount] - 1];
+            int k = changeAmount;
+            while (k > 0)
             {
-                int t = F(monedas, monto - cantMonedas * monedas[n], n + 1);
-                if (t >= int.MaxValue) continue;
-                //res = Math.Min(res, t + cantMonedas);
-                if (res > t + cantMonedas)
-                {
-                    res = t + cantMonedas;
-                    p[monto, n] = cantMonedas;
-                }
+                result[count[k] - 2] = denom[from[k]];
+                k = k - denom[from[k]];
             }
 
-            return res;
+            return result;
         }
 
-        static void Main(string[] args)
-        {
-            int[] monedas = { 1, 5, 10, 20, 25, 50 };
-            int monto = 42;
-            int res = F(monedas, monto);
-            Console.WriteLine(res);
-            Console.ReadKey();
-        }
     }
 }
