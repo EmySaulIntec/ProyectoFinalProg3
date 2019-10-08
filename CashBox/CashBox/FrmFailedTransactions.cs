@@ -77,9 +77,9 @@ namespace CashBox
             if (SelectedTransaction != null)
             {
                 if (SelectedTransaction.TransactionType == TransactionTypeEnum.Deposit)
-                    _cashService.Deposit(SelectedTransaction);
+                    _cashService.Deposit(SelectedTransaction, null);
                 else
-                    _cashService.Retirement(SelectedTransaction);
+                    _cashService.Retirement(SelectedTransaction, null);
 
                 Init();
             }

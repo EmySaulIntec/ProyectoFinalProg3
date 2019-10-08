@@ -65,9 +65,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CashDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CashDBDataSet.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="CoinSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoinSave.Designer.cs">
+      <DependentUpon>CoinSave.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposito.cs">
       <SubType>Form</SubType>
@@ -75,6 +81,7 @@
     <Compile Include="Deposito.Designer.cs">
       <DependentUpon>Deposito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dto\FrmDepositDto.cs" />
     <Compile Include="FrmConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +131,16 @@
     <Compile Include="Services\IIntegrationLayer.cs" />
     <Compile Include="Services\IntegrationLayer.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Utils\CoinChange.cs" />
     <Compile Include="ValidarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ValidarCliente.Designer.cs">
       <DependentUpon>ValidarCliente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CoinSave.resx">
+      <DependentUpon>CoinSave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deposito.resx">
       <DependentUpon>Deposito.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +182,9 @@
       <DependentUpon>CashDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="CashDBDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CashDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="CashDBDataSet.xss">
       <DependentUpon>CashDBDataSet.xsd</DependentUpon>
@@ -198,9 +209,7 @@
       <Name>DatabaseProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

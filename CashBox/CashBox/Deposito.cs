@@ -1,15 +1,8 @@
 ﻿using CashBox;
+using CashBox.Dto;
 using CashBox.Services;
 using DatabaseProject.Models;
-using DatabaseProject.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinalProg3
@@ -17,11 +10,26 @@ namespace ProyectoFinalProg3
     public partial class FrmDeposit : Form
     {
         private readonly ICashService _cashService;
+        private FrmDepositDto frmDepositDto;
+
         public FrmDeposit()
         {
             InitializeComponent();
 
             _cashService = new CashService();
+        }
+
+        public FrmDeposit(FrmDepositDto frmDepositDto) : this()
+        {
+            
+            this.frmDepositDto = frmDepositDto;
+            txtIdentification.Text = frmDepositDto.Identification;
+            txtNoCuenta.Text = frmDepositDto.OriginAccount;
+            txtNoCuentaDestino.Text = frmDepositDto.DestinyAccount;
+
+            radioIdentification.Checked = frmDepositDto.IdentificationType == IdentificationTypeEnum.Cedula;
+            radioPassport.Checked = frmDepositDto.IdentificationType == IdentificationTypeEnum.Passport;
+            txtMontoaDepositar.Text = frmDepositDto.Amount.ToString();
         }
 
         private void BtnDepositar_Click(object sender, EventArgs e)
@@ -47,7 +55,7 @@ namespace ProyectoFinalProg3
                 TransactionType = TransactionTypeEnum.Deposit
             };
 
-            _cashService.Deposit(transaction);
+            _cashService.Deposit(transaction, frmDepositDto);
 
             FrmHome home = new FrmHome();
             home.Show();
@@ -77,6 +85,20 @@ namespace ProyectoFinalProg3
                     e.Handled = true;
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CoinSave coinSave = new CoinSave(new FrmDepositDto()
+            {
+                DestinyAccount = txtNoCuentaDestino.Text,
+                OriginAccount = txtNoCuenta.Text,
+                Identification = txtIdentification.Text,
+                IdentificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport
+            });
+
+            coinSave.Show();
+            this.Close();
         }
     }
 }

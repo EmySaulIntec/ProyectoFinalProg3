@@ -11,12 +11,14 @@ namespace CashBox
     {
         private UnitOfWork unitOfWork;
         private BaseRepository<DailyClose> _dailyCloseRepository;
+        private BaseRepository<MCoin> _mCoinRepository;
 
         public FrmConfiguration()
         {
             InitializeComponent();
             unitOfWork = new UnitOfWork();
             _dailyCloseRepository = unitOfWork.Repository<DailyClose>();
+            _mCoinRepository = unitOfWork.Repository<MCoin>();
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
@@ -58,8 +60,8 @@ namespace CashBox
                 txtCash.Enabled = false;
             }
 
-            CashBox cashBox = Settings.GetCashBox();
-            txtCash.Text = cashBox.Amount.ToString();
+            SettingCashBox cashBox = Settings.GetCashBox();
+            txtCash.Text = _mCoinRepository.GetAll().Sum(d => d.Value).ToString();
 
             if (cashBox.CashIsOpen)
                 btnCloseCash.Text = "Cerrar caja";
@@ -69,7 +71,7 @@ namespace CashBox
 
         private void SetCashTime()
         {
-            CloseTime closeTime = Settings.GetCloseTime();
+            SettingCloseTime closeTime = Settings.GetCloseTime();
             cmbInitHour.SelectedIndex = closeTime.InitHour;
             cmbInitMinut.SelectedIndex = closeTime.InitMinute;
             cmbEndHour.SelectedIndex = closeTime.EndHour;

@@ -11,14 +11,15 @@ namespace DatabaseProject.Contexts
     {
         public CashDbContext() : base("con")
         {
-            var a = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         }
 
         // Mis modelos o entidades
         public DbSet<Models.User> Users { get; set; }
         public DbSet<Models.Transaction> Transactions { get; set; }
         public DbSet<Models.DailyClose> DailyCloses { get; set; }
+        public DbSet<Models.MCoin> MCoins { get; set; }
 
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             var typesToRegister = Assembly.GetExecutingAssembly().GetTypes()

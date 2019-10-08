@@ -1,8 +1,5 @@
-﻿
-
-namespace CashBox.Utils
+﻿namespace CashBox.Utils
 {
-
     public class CoinChange
     {
         public static int[] MinChange(int[] denom, int changeAmount)
@@ -42,6 +39,5 @@ namespace CashBox.Utils
 
             return result;
         }
-
     }
 }

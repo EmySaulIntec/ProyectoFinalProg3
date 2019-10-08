@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseProject.Models;
 using DatabaseProject.Repositories;
-using ProyectoFinalProg3;
 
 namespace CashBox.Services
 {
@@ -16,14 +12,17 @@ namespace CashBox.Services
 
         private UnitOfWork unitOfWork;
         private BaseRepository<Transaction> _transactionRepository;
+        private BaseRepository<MCoin> _mcoinRepository;
+
         public CashService()
         {
             _integrationLayer = new IntegrationLayer();
             unitOfWork = new UnitOfWork();
             _transactionRepository = unitOfWork.Repository<Transaction>();
+            _mcoinRepository = unitOfWork.Repository<MCoin>();
         }
 
-        public void Deposit(Transaction transaction)
+        public void Deposit(Transaction transaction, Dto.FrmDepositDto frmDepositDto)
         {
             if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType))
             {
@@ -55,7 +54,14 @@ namespace CashBox.Services
                         else
                         {
                             _transactionRepository.Insert(transaction);
-                            Settings.AddToCash(transaction.Amount);
+
+                            var mcCOins = frmDepositDto.CoinElements.Select(e => new MCoin()
+                            {
+                                Value = e
+                            }).ToList();
+
+                            _mcoinRepository.InsertAll(mcCOins);
+
                         }
                     }
                     else
@@ -74,7 +80,7 @@ namespace CashBox.Services
             }
         }
 
-        public void Retirement(Transaction transaction)
+        public void Retirement(Transaction transaction, List<MCoin> coinsAdded)
         {
             if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType))
             {
@@ -82,12 +88,6 @@ namespace CashBox.Services
                 {
                     if (_integrationLayer.Retirement(transaction.OriginAccount, transaction.Identification, transaction.IdentificationType, transaction.Amount))
                     {
-                        if (!Settings.SubstractToCash(transaction.Amount))
-                        {
-                            MessageBox.Show("No se puede hacer la transacción caja vacía.");
-                            return;
-                        }
-
                         transaction.Status = TransactionStatusEnum.Completed;
 
                         string clientFullName = _integrationLayer.GetClient(transaction.OriginAccount);
@@ -107,7 +107,10 @@ namespace CashBox.Services
                         _transactionRepository.Update(t);
                     }
                     else
+                    {
                         _transactionRepository.Insert(transaction);
+                        _mcoinRepository.DeleteAll(coinsAdded);
+                    }
                 }
                 else
                 {

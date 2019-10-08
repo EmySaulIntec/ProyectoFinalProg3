@@ -3,6 +3,8 @@ using CashBox.Services;
 using DatabaseProject.Models;
 using DatabaseProject.Repositories;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProyectoFinalProg3
@@ -14,12 +16,14 @@ namespace ProyectoFinalProg3
 
         private readonly ICashService _cashService;
 
+        private BaseRepository<MCoin> _mcoinRepository;
 
         public FrmmRetirement()
         {
             InitializeComponent();
             unitOfWork = new UnitOfWork();
             _transactionRepository = unitOfWork.Repository<Transaction>();
+            _mcoinRepository = unitOfWork.Repository<MCoin>();
 
             _cashService = new CashService();
         }
@@ -44,14 +48,40 @@ namespace ProyectoFinalProg3
                 TransactionType = TransactionTypeEnum.Retirement
             };
 
-            _cashService.Retirement(transaction);
+            List<MCoin> coinsAdded = new List<MCoin>();
+
+            if (RemoveCoins(amount, ref coinsAdded))
+            {
+                _cashService.Retirement(transaction, coinsAdded);
+
+                var coins = string.Join(",", coinsAdded.Select(d=>d.Value));
+
+                MessageBox.Show($"Monedas devueltas:\n{coins}");
+            }
+            
 
             FrmHome home = new FrmHome();
             home.Show();
             this.Hide();
         }
 
+        private bool RemoveCoins(decimal value, ref List<MCoin> coinsAdded)
+        {
+            var coins = _mcoinRepository.GetAll().OrderByDescending(e => e.Value).ToList();
 
+            while (value > 0 && coins.Any())
+            {
+                if (value >= coins[0].Value)
+                {
+                    value -= coins[0].Value;
+                    coinsAdded.Add(coins[0]);
+                }
+
+                coins.RemoveAt(0);
+            }
+
+            return value == 0;
+        }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {

@@ -4,7 +4,7 @@ using System;
 namespace CashBox
 {
 
-    public class CloseTime
+    public class SettingCloseTime
     {
         public int InitHour { get; set; }
         public int InitMinute { get; set; }
@@ -12,19 +12,18 @@ namespace CashBox
         public int EndMinute { get; set; }
     }
 
-    public class CashBox
+    public class SettingCashBox
     {
         public bool CashIsOpen { get; set; }
-        public decimal Amount { get; set; }
     }
 
     public static class Settings
     {
         public static User LoggedUser { get; set; } = new User();
 
-        public static CloseTime GetCloseTime()
+        public static SettingCloseTime GetCloseTime()
         {
-            return new CloseTime()
+            return new SettingCloseTime()
             {
                 EndHour = Properties.Settings.Default.EndHour,
                 EndMinute = Properties.Settings.Default.EndMinute,
@@ -34,20 +33,18 @@ namespace CashBox
         }
 
 
-        public static CashBox GetCashBox()
+        public static SettingCashBox GetCashBox()
         {
-            return new CashBox()
+            return new SettingCashBox()
             {
                 CashIsOpen = Properties.Settings.Default.CashIsOpen,
-                Amount = Properties.Settings.Default.Amount,
             };
         }
-
 
         public static bool CanDoTransactions()
         {
 
-            CloseTime closeTime = GetCloseTime();
+            SettingCloseTime closeTime = GetCloseTime();
 
             TimeSpan initTime = TimeSpan.FromHours(closeTime.InitHour).Add(TimeSpan.FromMinutes(closeTime.InitMinute));
             TimeSpan endTime = TimeSpan.FromHours(closeTime.EndHour).Add(TimeSpan.FromMinutes(closeTime.EndMinute));
@@ -57,19 +54,7 @@ namespace CashBox
             return (initTime <= now && endTime >= now) && Properties.Settings.Default.CashIsOpen;
         }
 
-        public static void AddToCash(decimal amount)
-        {
-            Properties.Settings.Default.Amount += amount;
-        }
-
-        public static bool SubstractToCash(decimal amount)
-        {
-            if (Properties.Settings.Default.Amount - amount < 0)
-                return false;
-
-            Properties.Settings.Default.Amount -= amount;
-
-            return true;
-        }
+      
+      
     }
 }
