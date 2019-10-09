@@ -24,13 +24,13 @@ namespace CashBox.Services
 
         public void Deposit(Transaction transaction, Dto.FrmDepositDto frmDepositDto)
         {
-            if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType))
+            if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType.Value))
             {
                 if (_integrationLayer.Validate(transaction.OriginAccount))
                 {
                     if (_integrationLayer.Validate(transaction.DestinyAccount))
                     {
-                        if (_integrationLayer.Deposit(transaction.OriginAccount, transaction.DestinyAccount, transaction.Identification, transaction.IdentificationType, transaction.Amount))
+                        if (_integrationLayer.Deposit(transaction.OriginAccount, transaction.DestinyAccount, transaction.Identification, transaction.IdentificationType.Value, transaction.Amount))
                         {
                             transaction.Status = TransactionStatusEnum.Completed;
 
@@ -82,11 +82,11 @@ namespace CashBox.Services
 
         public void Retirement(Transaction transaction, List<MCoin> coinsAdded)
         {
-            if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType))
+            if (_integrationLayer.Validate(transaction.Identification, transaction.IdentificationType.Value))
             {
                 if (_integrationLayer.Validate(transaction.OriginAccount))
                 {
-                    if (_integrationLayer.Retirement(transaction.OriginAccount, transaction.Identification, transaction.IdentificationType, transaction.Amount))
+                    if (_integrationLayer.Retirement(transaction.OriginAccount, transaction.Identification, transaction.IdentificationType.Value, transaction.Amount))
                     {
                         transaction.Status = TransactionStatusEnum.Completed;
 
@@ -97,7 +97,9 @@ namespace CashBox.Services
                     else
                     {
                         transaction.Status = TransactionStatusEnum.Incompleted;
-                        MessageBox.Show("Transaccion no efectuada, intentelo mas tarde. Enviada a transacciones fallidas");
+                        MessageBox.Show("Su trasmsaccion ha sido efectuada correctamente. Estaremos dandole seguimeiento a esta transacción " +
+                            "por motivos internos.");
+
                     }
 
                     if (transaction.Id != 0)

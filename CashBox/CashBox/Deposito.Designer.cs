@@ -228,7 +228,7 @@
             this.button1.Location = new System.Drawing.Point(772, 507);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 39);
+            this.button1.Size = new System.Drawing.Size(170, 51);
             this.button1.TabIndex = 25;
             this.button1.Text = "Monedas";
             this.button1.UseVisualStyleBackColor = false;

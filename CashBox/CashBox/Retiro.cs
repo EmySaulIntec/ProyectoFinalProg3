@@ -30,6 +30,20 @@ namespace ProyectoFinalProg3
 
         private void BtnRetirar_Click(object sender, EventArgs e)
         {
+
+            // TODO: Validar identificacion dominicana.
+            if (string.IsNullOrEmpty(txtIdentification.Text))
+            {
+                MessageBox.Show("Identificacion no valida", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNoCuenta.Text))
+            {
+                MessageBox.Show("Numero de cuenta de origen no valida.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtMontoaRetirar.Text) || txtMontoaRetirar.Text.Trim() == "0")
             {
                 MessageBox.Show("Monto no valido", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -57,12 +71,16 @@ namespace ProyectoFinalProg3
                 var coins = string.Join(",", coinsAdded.Select(d=>d.Value));
 
                 MessageBox.Show($"Monedas devueltas:\n{coins}");
-            }
-            
 
-            FrmHome home = new FrmHome();
-            home.Show();
-            this.Hide();
+                FrmHome home = new FrmHome();
+                home.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show($"No se puede retirar esta cantidad.");
+            }
+
         }
 
         private bool RemoveCoins(decimal value, ref List<MCoin> coinsAdded)

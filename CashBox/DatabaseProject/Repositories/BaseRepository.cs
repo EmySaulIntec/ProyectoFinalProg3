@@ -105,6 +105,33 @@ namespace DatabaseProject.Repositories
             }
         }
 
+      
+        public void Delete(T entity)
+        {
+            try
+            {
+                if (entity == null)
+                {
+                    throw new ArgumentNullException("entity");
+                }
+
+                this.Entities.Remove(entity);
+                this.context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        errorMessage += Environment.NewLine + string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+                throw new Exception(errorMessage, dbEx);
+            }
+        }
+
         public void DeleteAll(IEnumerable<T> entities)
         {
             try
@@ -134,16 +161,20 @@ namespace DatabaseProject.Repositories
                 throw new Exception(errorMessage, dbEx);
             }
         }
-        public void Delete(T entity)
+
+        public void DeleteAll()
         {
             try
             {
-                if (entity == null)
+                var entities = this.Entities.ToList();
+
+                foreach (var entity in entities)
                 {
-                    throw new ArgumentNullException("entity");
+                    var e = this.Entities.Find(entity.Id);
+
+                    this.Entities.Remove(e);
                 }
 
-                this.Entities.Remove(entity);
                 this.context.SaveChanges();
             }
             catch (DbEntityValidationException dbEx)
@@ -159,7 +190,6 @@ namespace DatabaseProject.Repositories
                 throw new Exception(errorMessage, dbEx);
             }
         }
-
 
         public virtual IQueryable<T> GetAll()
         {

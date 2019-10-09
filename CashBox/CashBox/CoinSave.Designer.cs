@@ -42,14 +42,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneThousand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDFiveHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoThousand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -173,35 +170,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(417, 463);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(241, 51);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Escoger Monto";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(195, 476);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(168, 26);
-            this.numericUpDown1.TabIndex = 39;
-            // 
             // CoinSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 668);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(682, 439);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.label13);
@@ -223,7 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneThousand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDFiveHundred)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoThousand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +216,5 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

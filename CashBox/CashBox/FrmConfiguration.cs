@@ -2,6 +2,7 @@
 using DatabaseProject.Repositories;
 using ProyectoFinalProg3;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,16 +10,24 @@ namespace CashBox
 {
     public partial class FrmConfiguration : Form
     {
-        private UnitOfWork unitOfWork;
+        private UnitOfWork _unitOfWork;
         private BaseRepository<DailyClose> _dailyCloseRepository;
         private BaseRepository<MCoin> _mCoinRepository;
+        private BaseRepository<Transaction> _transactionRepository;
 
         public FrmConfiguration()
         {
             InitializeComponent();
-            unitOfWork = new UnitOfWork();
-            _dailyCloseRepository = unitOfWork.Repository<DailyClose>();
-            _mCoinRepository = unitOfWork.Repository<MCoin>();
+
+            _unitOfWork = new UnitOfWork();
+            _dailyCloseRepository = _unitOfWork.Repository<DailyClose>();
+            _mCoinRepository = _unitOfWork.Repository<MCoin>();
+            _transactionRepository = _unitOfWork.Repository<Transaction>();
+        }
+        public FrmConfiguration(List<int> coins) : this()
+        {
+
+            OpenCloseBox(coins);
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
@@ -60,13 +69,16 @@ namespace CashBox
                 txtCash.Enabled = false;
             }
 
-            SettingCashBox cashBox = Settings.GetCashBox();
-            txtCash.Text = _mCoinRepository.GetAll().Sum(d => d.Value).ToString();
 
-            if (cashBox.CashIsOpen)
-                btnCloseCash.Text = "Cerrar caja";
+            if (_mCoinRepository.GetAll().Any())
+                txtCash.Text = _mCoinRepository.GetAll().Sum(d => d.Value).ToString();
             else
+                txtCash.Text = "0";
+
+            if (!_dailyCloseRepository.GetAll().Any(d => d.CreationTime >= currentDate))
                 btnCloseCash.Text = "Abrir caja";
+            else
+                btnCloseCash.Text = "Cerrar caja";
         }
 
         private void SetCashTime()
@@ -130,6 +142,16 @@ namespace CashBox
 
         private void btnCloseCash_Click(object sender, EventArgs e)
         {
+            CoinSave coinSave = new CoinSave();
+            coinSave.Show();
+            this.Close();
+        }
+
+        private void OpenCloseBox(List<int> coins = null)
+        {
+            if (coins != null)
+                txtCash.Text = coins.Sum(e => e).ToString();
+
             if (string.IsNullOrEmpty(txtCash.Text))
                 txtCash.Text = "0";
 
@@ -153,15 +175,20 @@ namespace CashBox
                     InitialAmount = Properties.Settings.Default.Amount
                 });
 
+                ReFillBoxCoins(coins);
+
                 Properties.Settings.Default.CashIsOpen = true;
             }
             else if (!currentDailyClose.FinalAmount.HasValue)
             {
                 currentDailyClose.FinalAmount = Properties.Settings.Default.Amount;
 
+
                 _dailyCloseRepository.Update(currentDailyClose);
 
                 Properties.Settings.Default.CashIsOpen = false;
+
+                ReFillBoxCoins(coins);
             }
             else
             {
@@ -172,6 +199,56 @@ namespace CashBox
             Properties.Settings.Default.Save();
 
             SetCashBox();
+        }
+
+        private void ReFillBoxCoins(List<int> coins)
+        {
+            decimal currentValue = 0;
+
+            if (_mCoinRepository.GetAll().Any())
+                currentValue = _mCoinRepository.GetAll().Sum(e => e.Value);
+
+            _mCoinRepository.DeleteAll();
+
+            var coinAll = coins.Select(e => new MCoin()
+            {
+                Value = e
+            });
+
+            _mCoinRepository.InsertAll(coinAll);
+
+
+            decimal valueCoinToAdd = coinAll.Sum(e => e.Value);
+
+            if (valueCoinToAdd > currentValue)
+            {
+                _transactionRepository.Insert(new Transaction()
+                {
+                    Amount = Math.Abs(valueCoinToAdd - currentValue),
+                    CasherId = Settings.LoggedUser.Id,
+                    IsInternal = true,
+                    DestinyAccount = string.Empty,
+                    OriginAccount = string.Empty,
+                    Identification = string.Empty,
+                    Status = TransactionStatusEnum.Completed,
+                    TransactionType = TransactionTypeEnum.Deposit
+                });
+            }
+            else if (valueCoinToAdd < currentValue)
+            {
+                // Retiro
+                _transactionRepository.Insert(new Transaction()
+                {
+                    Amount = Math.Abs(valueCoinToAdd - currentValue),
+                    CasherId = Settings.LoggedUser.Id,
+                    IsInternal = true,
+                    DestinyAccount = string.Empty,
+                    OriginAccount = string.Empty,
+                    Identification = string.Empty,
+                    Status = TransactionStatusEnum.Completed,
+                    TransactionType = TransactionTypeEnum.Retirement
+                });
+            }
         }
     }
 }

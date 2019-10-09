@@ -3,18 +3,12 @@ using System;
 
 namespace CashBox
 {
-
     public class SettingCloseTime
     {
         public int InitHour { get; set; }
         public int InitMinute { get; set; }
         public int EndHour { get; set; }
         public int EndMinute { get; set; }
-    }
-
-    public class SettingCashBox
-    {
-        public bool CashIsOpen { get; set; }
     }
 
     public static class Settings
@@ -29,15 +23,6 @@ namespace CashBox
                 EndMinute = Properties.Settings.Default.EndMinute,
                 InitHour = Properties.Settings.Default.InitHour,
                 InitMinute = Properties.Settings.Default.InitMinute
-            };
-        }
-
-
-        public static SettingCashBox GetCashBox()
-        {
-            return new SettingCashBox()
-            {
-                CashIsOpen = Properties.Settings.Default.CashIsOpen,
             };
         }
 
