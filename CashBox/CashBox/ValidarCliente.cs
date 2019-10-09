@@ -28,7 +28,18 @@ namespace ProyectoFinalProg3
 
         private void BtnValidar_Click(object sender, EventArgs e)
         {
+            // TODO: Validar identificacion dominicana.
+            if (string.IsNullOrEmpty(txtIdentification.Text))
+            {
+                MessageBox.Show("Identificacion no valida", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (string.IsNullOrEmpty(txtNoCuenta.Text))
+            {
+                MessageBox.Show("Numero de cuenta de origen no valida.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var identificationType = radioIdentification.Checked ? IdentificationTypeEnum.Cedula : IdentificationTypeEnum.Passport;
 
             if (_integrationLayer.Validate(txtIdentification.Text, identificationType))

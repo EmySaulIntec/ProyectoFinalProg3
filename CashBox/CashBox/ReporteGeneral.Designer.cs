@@ -1,6 +1,6 @@
 ﻿namespace CashBox
 {
-    partial class Reporte
+    partial class ReporteGeneral
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reporte));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteGeneral));
             this.lblTipoTransaccion = new System.Windows.Forms.Label();
             this.txtTipoTransaccion = new System.Windows.Forms.TextBox();
             this.btnGenerarReporte = new System.Windows.Forms.Button();

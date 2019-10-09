@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace CashBox
 {
-    public partial class Cuadre : Form
+    public partial class CuadreDeCaja : Form
     {
         int MontoCaja, TotalDeposito, TotalRetiro, Total;
-        public Cuadre()
+        public CuadreDeCaja()
         {
             InitializeComponent();
         }
@@ -24,9 +24,6 @@ namespace CashBox
         {
 
         }
-
-       
-
         private void TxtTotalCaja_TextChanged(object sender, EventArgs e)
         {
            
@@ -54,8 +51,6 @@ namespace CashBox
                 MessageBox.Show("Hubo un descuadre, favor revisar nuevamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
-            
-
         }
 
         private void Cuadre_Load(object sender, EventArgs e)

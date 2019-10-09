@@ -16,12 +16,12 @@ using CashBox.CashDBDataSetTableAdapters;
 
 namespace CashBox
 {
-    public partial class Reporte : Form
+    public partial class ReporteGeneral : Form
     {
         private UnitOfWork unitOfWork;
         private BaseRepository<Transaction> _transactionRepository;
         public static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public Reporte()
+        public ReporteGeneral()
         {
             InitializeComponent();
             unitOfWork = new UnitOfWork();

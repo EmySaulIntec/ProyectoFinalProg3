@@ -38,6 +38,7 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transaccionesFallidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGenerarReporte = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,6 +145,19 @@
             this.transaccionesFallidasToolStripMenuItem.Text = "Transacciones Fallidas";
             this.transaccionesFallidasToolStripMenuItem.Click += new System.EventHandler(this.transaccionesFallidasToolStripMenuItem_Click);
             // 
+            // btnGenerarReporte
+            // 
+            this.btnGenerarReporte.BackColor = System.Drawing.Color.Transparent;
+            this.btnGenerarReporte.Font = new System.Drawing.Font("Stencil", 15.75F);
+            this.btnGenerarReporte.Location = new System.Drawing.Point(419, 468);
+            this.btnGenerarReporte.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerarReporte.Name = "btnGenerarReporte";
+            this.btnGenerarReporte.Size = new System.Drawing.Size(354, 50);
+            this.btnGenerarReporte.TabIndex = 34;
+            this.btnGenerarReporte.Text = "Generar Reporte del Cliente";
+            this.btnGenerarReporte.UseVisualStyleBackColor = false;
+            this.btnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -152,6 +166,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 554);
             this.ControlBox = false;
+            this.Controls.Add(this.btnGenerarReporte);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnRetiro);
             this.Controls.Add(this.btnDeposito);
@@ -184,5 +199,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transaccionesFallidasToolStripMenuItem;
+        private System.Windows.Forms.Button btnGenerarReporte;
     }
 }

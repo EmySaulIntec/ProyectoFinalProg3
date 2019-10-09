@@ -1,6 +1,6 @@
 ﻿namespace CashBox
 {
-    partial class Cuadre
+    partial class CuadreDeCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cuadre));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CuadreDeCaja));
             this.lblMontoCaja = new System.Windows.Forms.Label();
             this.txtMontoCaja = new System.Windows.Forms.TextBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();

@@ -43,14 +43,11 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneThousand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDFiveHundred)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoThousand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -106,7 +103,7 @@
             // nUDTwoHundred
             // 
             this.nUDTwoHundred.Location = new System.Drawing.Point(117, 83);
-            this.nUDTwoHundred.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDTwoHundred.Margin = new System.Windows.Forms.Padding(2);
             this.nUDTwoHundred.Name = "nUDTwoHundred";
             this.nUDTwoHundred.Size = new System.Drawing.Size(43, 20);
             this.nUDTwoHundred.TabIndex = 30;
@@ -115,7 +112,7 @@
             // nUDOneHundred
             // 
             this.nUDOneHundred.Location = new System.Drawing.Point(46, 83);
-            this.nUDOneHundred.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDOneHundred.Margin = new System.Windows.Forms.Padding(2);
             this.nUDOneHundred.Name = "nUDOneHundred";
             this.nUDOneHundred.Size = new System.Drawing.Size(43, 20);
             this.nUDOneHundred.TabIndex = 29;
@@ -124,7 +121,7 @@
             // nUDOneThousand
             // 
             this.nUDOneThousand.Location = new System.Drawing.Point(270, 83);
-            this.nUDOneThousand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDOneThousand.Margin = new System.Windows.Forms.Padding(2);
             this.nUDOneThousand.Name = "nUDOneThousand";
             this.nUDOneThousand.Size = new System.Drawing.Size(43, 20);
             this.nUDOneThousand.TabIndex = 32;
@@ -133,7 +130,7 @@
             // nUDFiveHundred
             // 
             this.nUDFiveHundred.Location = new System.Drawing.Point(199, 83);
-            this.nUDFiveHundred.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDFiveHundred.Margin = new System.Windows.Forms.Padding(2);
             this.nUDFiveHundred.Name = "nUDFiveHundred";
             this.nUDFiveHundred.Size = new System.Drawing.Size(43, 20);
             this.nUDFiveHundred.TabIndex = 31;
@@ -142,7 +139,7 @@
             // nUDTwoThousand
             // 
             this.nUDTwoThousand.Location = new System.Drawing.Point(336, 83);
-            this.nUDTwoThousand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nUDTwoThousand.Margin = new System.Windows.Forms.Padding(2);
             this.nUDTwoThousand.Name = "nUDTwoThousand";
             this.nUDTwoThousand.Size = new System.Drawing.Size(43, 20);
             this.nUDTwoThousand.TabIndex = 33;
@@ -180,7 +177,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(235, 181);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(204, 75);
             this.button1.TabIndex = 37;
@@ -188,39 +185,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(278, 301);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 33);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Escoger Monto";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(130, 309);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(112, 20);
-            this.numericUpDown1.TabIndex = 39;
-            // 
             // CoinSave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(530, 434);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(492, 257);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.label13);
@@ -235,7 +206,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CoinSave";
             this.Text = "CoinSave";
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoHundred)).EndInit();
@@ -243,7 +214,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDOneThousand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDFiveHundred)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDTwoThousand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +234,5 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

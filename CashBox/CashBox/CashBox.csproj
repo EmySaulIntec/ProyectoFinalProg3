@@ -87,11 +87,11 @@
     <Compile Include="CoinSave.Designer.cs">
       <DependentUpon>CoinSave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cuadre.cs">
+    <Compile Include="CuadreDeCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cuadre.Designer.cs">
-      <DependentUpon>Cuadre.cs</DependentUpon>
+    <Compile Include="CuadreDeCaja.Designer.cs">
+      <DependentUpon>CuadreDeCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposito.cs">
       <SubType>Form</SubType>
@@ -132,11 +132,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reporte.cs">
+    <Compile Include="ReporteGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte.Designer.cs">
-      <DependentUpon>Reporte.cs</DependentUpon>
+    <Compile Include="ReporteGeneral.Designer.cs">
+      <DependentUpon>ReporteGeneral.cs</DependentUpon>
     </Compile>
     <Compile Include="Retiro.cs">
       <SubType>Form</SubType>
@@ -160,8 +160,8 @@
     <EmbeddedResource Include="CoinSave.resx">
       <DependentUpon>CoinSave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cuadre.resx">
-      <DependentUpon>Cuadre.cs</DependentUpon>
+    <EmbeddedResource Include="CuadreDeCaja.resx">
+      <DependentUpon>CuadreDeCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deposito.resx">
       <DependentUpon>Deposito.cs</DependentUpon>
@@ -191,8 +191,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reporte.resx">
-      <DependentUpon>Reporte.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteGeneral.resx">
+      <DependentUpon>ReporteGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteCuadre.rdlc" />
     <EmbeddedResource Include="Retiro.resx">

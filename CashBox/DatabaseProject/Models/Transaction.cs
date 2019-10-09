@@ -13,7 +13,9 @@ namespace DatabaseProject.Models
         public long CasherId { get; set; }
 
         public string Identification { get; set; }
-        public IdentificationTypeEnum IdentificationType { get; set; }
+
+        public bool IsInternal { get; set; }
+        public IdentificationTypeEnum? IdentificationType { get; set; }
 
         [ForeignKey(nameof(CasherId))]
         public virtual User Casher { get; set; }
@@ -38,6 +40,8 @@ namespace DatabaseProject.Models
         Deposit = 1,
         Retirement = 2
     }
+
+
 
     public enum IdentificationTypeEnum : int
     {

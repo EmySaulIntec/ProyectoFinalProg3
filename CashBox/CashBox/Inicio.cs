@@ -116,5 +116,12 @@ namespace ProyectoFinalProg3
             frmFailedTransaction.Show();
             this.Hide();
         }
+
+        private void BtnGenerarReporte_Click(object sender, EventArgs e)
+        {
+            ReporteGeneral abrir = new ReporteGeneral();
+            abrir.Show();
+            this.Hide();
+        }
     }
 }

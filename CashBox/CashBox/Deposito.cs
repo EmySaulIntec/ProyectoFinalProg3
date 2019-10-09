@@ -34,6 +34,25 @@ namespace ProyectoFinalProg3
 
         private void BtnDepositar_Click(object sender, EventArgs e)
         {
+            // TODO: Validar identificacion dominicana.
+            if (string.IsNullOrEmpty(txtIdentification.Text) )
+            {
+                MessageBox.Show("Identificacion no valida", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNoCuenta.Text))
+            {
+                MessageBox.Show("Numero de cuenta de origen no valida.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtNoCuentaDestino.Text))
+            {
+                MessageBox.Show("Numero de cuenta de destino no valida.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (string.IsNullOrEmpty(txtMontoaDepositar.Text) || txtMontoaDepositar.Text.Trim() == "0")
             {
                 MessageBox.Show("Monto no valido", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);

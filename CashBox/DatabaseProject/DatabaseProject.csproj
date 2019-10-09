@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201910082014111_added_mcoin.designer.cs">
       <DependentUpon>201910082014111_added_mcoin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910091808026_added_transaction_internal.cs" />
+    <Compile Include="Migrations\201910091808026_added_transaction_internal.designer.cs">
+      <DependentUpon>201910091808026_added_transaction_internal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\DailyClose.cs" />
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910082014111_added_mcoin.resx">
       <DependentUpon>201910082014111_added_mcoin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910091808026_added_transaction_internal.resx">
+      <DependentUpon>201910091808026_added_transaction_internal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
