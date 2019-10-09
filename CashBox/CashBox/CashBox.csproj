@@ -45,13 +45,22 @@
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms">
-      <HintPath>..\..\..\..\Users\GUIA TECHNOLOgy\source\repos\AWebReportApplication\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1358.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CashDBDataSet.cs">
+      <DependentUpon>CashDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CashDBDataSet.Designer.cs">
       <DependentUpon>CashDBDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -74,6 +86,12 @@
     </Compile>
     <Compile Include="CoinSave.Designer.cs">
       <DependentUpon>CoinSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuadre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuadre.Designer.cs">
+      <DependentUpon>Cuadre.cs</DependentUpon>
     </Compile>
     <Compile Include="Deposito.cs">
       <SubType>Form</SubType>
@@ -131,6 +149,7 @@
     <Compile Include="Services\IIntegrationLayer.cs" />
     <Compile Include="Services\IntegrationLayer.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utils\CoinChange.cs" />
     <Compile Include="ValidarCliente.cs">
       <SubType>Form</SubType>
@@ -140,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="CoinSave.resx">
       <DependentUpon>CoinSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuadre.resx">
+      <DependentUpon>Cuadre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deposito.resx">
       <DependentUpon>Deposito.cs</DependentUpon>
@@ -153,6 +175,7 @@
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralReport.rdlc" />
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,7 +194,7 @@
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteGeneral.rdlc" />
+    <EmbeddedResource Include="ReporteCuadre.rdlc" />
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,7 +232,21 @@
       <Name>DatabaseProject</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

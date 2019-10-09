@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using DatabaseProject.Repositories;
 using DatabaseProject.Models;
+using CashBox.CashDBDataSetTableAdapters;
 
 namespace CashBox
 {
@@ -20,7 +21,6 @@ namespace CashBox
         private UnitOfWork unitOfWork;
         private BaseRepository<Transaction> _transactionRepository;
         public static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=CashDB;Integrated Security=True");
         public Reporte()
         {
             InitializeComponent();
@@ -32,20 +32,23 @@ namespace CashBox
 
         private void BtnGenerarReporte_Click(object sender, EventArgs e)
         {
-            var transactionsD = _transactionRepository.GetAll().Where(t => t.TransactionType == TransactionTypeEnum.Deposit).ToList();
-            var transactionsR = _transactionRepository.GetAll().Where(t => t.TransactionType == TransactionTypeEnum.Retirement).ToList(); 
-            //SqlCommand comando = new SqlCommand("Select * from Transactions", connection);
-            //SqlDataAdapter adapter = new SqlDataAdapter();
-            //adapter.SelectCommand = comando;
-            //DataTable table = new DataTable();
-            //adapter.Fill(table);
-            //gTransactions.DataSource = table;
+            //var transactionsD = _transactionRepository.GetAll().Where(t => t.TransactionType == TransactionTypeEnum.Deposit).ToList();
+            //var transactionsR = _transactionRepository.GetAll().Where(t => t.TransactionType == TransactionTypeEnum.Retirement).ToList(); 
+
+            reportViewer1.LocalReport.ReportPath = @"C:\Cash\ProyectoFinalProg3\CashBox\CashBox\GeneralReport.rdlc";
+            TransactionsTableAdapter adapter = new TransactionsTableAdapter();
+            int TransactionType = int.Parse(txtTipoTransaccion.Text);
+            ReportDataSource reportDataSource = new ReportDataSource("DataSetTransactionType", (DataTable)adapter.GetDataByTransactionType(TransactionType));
+            reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+            reportViewer1.RefreshReport();
+
+
+
         }
 
         private void Reporte_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cashDBDataSet.Transactions' table. You can move, or remove it, as needed.
-            this.transactionsTableAdapter.Fill(this.cashDBDataSet.Transactions);
+            
 
         }
 

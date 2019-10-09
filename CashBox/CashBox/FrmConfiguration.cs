@@ -172,6 +172,14 @@ namespace CashBox
             Properties.Settings.Default.Save();
 
             SetCashBox();
+            Cuadre abrir = new Cuadre();
+            abrir.Show();
+            this.Hide();
+        }
+
+        private void TxtCash_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

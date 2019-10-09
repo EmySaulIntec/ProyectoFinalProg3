@@ -80,7 +80,7 @@
             "22",
             "23"});
             this.cmbInitHour.Location = new System.Drawing.Point(26, 107);
-            this.cmbInitHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbInitHour.Margin = new System.Windows.Forms.Padding(2);
             this.cmbInitHour.Name = "cmbInitHour";
             this.cmbInitHour.Size = new System.Drawing.Size(37, 21);
             this.cmbInitHour.TabIndex = 0;
@@ -198,7 +198,7 @@
             "58",
             "59"});
             this.cmbInitMinut.Location = new System.Drawing.Point(82, 107);
-            this.cmbInitMinut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbInitMinut.Margin = new System.Windows.Forms.Padding(2);
             this.cmbInitMinut.Name = "cmbInitMinut";
             this.cmbInitMinut.Size = new System.Drawing.Size(41, 21);
             this.cmbInitMinut.TabIndex = 10;
@@ -292,7 +292,7 @@
             "58",
             "59"});
             this.cmbEndMinut.Location = new System.Drawing.Point(242, 107);
-            this.cmbEndMinut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEndMinut.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEndMinut.Name = "cmbEndMinut";
             this.cmbEndMinut.Size = new System.Drawing.Size(41, 21);
             this.cmbEndMinut.TabIndex = 15;
@@ -350,7 +350,7 @@
             "22",
             "23"});
             this.cmbEndHour.Location = new System.Drawing.Point(186, 107);
-            this.cmbEndHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEndHour.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEndHour.Name = "cmbEndHour";
             this.cmbEndHour.Size = new System.Drawing.Size(38, 21);
             this.cmbEndHour.TabIndex = 12;
@@ -407,10 +407,11 @@
             // txtCash
             // 
             this.txtCash.Location = new System.Drawing.Point(13, 281);
-            this.txtCash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCash.Margin = new System.Windows.Forms.Padding(2);
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(113, 20);
             this.txtCash.TabIndex = 21;
+            this.txtCash.TextChanged += new System.EventHandler(this.TxtCash_TextChanged);
             this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label11
@@ -462,7 +463,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbInitHour);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmConfiguration";
             this.Text = "FrmConfiguration";
             this.Load += new System.EventHandler(this.FrmConfiguration_Load);
